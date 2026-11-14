@@ -1,0 +1,150 @@
+{
+ "files": [
+  {
+   "file": "Baseline/2013/2013_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 11092987
+  },
+  {
+   "file": "Baseline/2013/2013_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 5038968
+  },
+  {
+   "file": "Baseline/2014/2014_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 12487482
+  },
+  {
+   "file": "Baseline/2014/2014_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 5443399
+  },
+  {
+   "file": "Baseline/2016/2016_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 14398505
+  },
+  {
+   "file": "Baseline/2016/2016_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 5960131
+  },
+  {
+   "file": "Baseline/2017/2017_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 13354470
+  },
+  {
+   "file": "Baseline/2017/2017_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 5649193
+  },
+  {
+   "file": "Baseline/2018/2018_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 15607825
+  },
+  {
+   "file": "Baseline/2018/2018_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 6262941
+  },
+  {
+   "file": "Baseline/2019/2019_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 15690934
+  },
+  {
+   "file": "Baseline/2019/2019_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 6261497
+  },
+  {
+   "file": "Baseline/2020/2020_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 18017553
+  },
+  {
+   "file": "Baseline/2020/2020_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 6887534
+  },
+  {
+   "file": "Baseline/2021/2021_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 16466550
+  },
+  {
+   "file": "Baseline/2021/2021_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 6488711
+  },
+  {
+   "file": "Baseline/2022/2022_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 16479514
+  },
+  {
+   "file": "Baseline/2022/2022_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 6489157
+  },
+  {
+   "file": "Baseline/2023/2023_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 11087033
+  },
+  {
+   "file": "Baseline/2023/2023_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 5069927
+  },
+  {
+   "file": "Baseline/2024/2024_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 9765856
+  },
+  {
+   "file": "Baseline/2024/2024_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 4707670
+  },
+  {
+   "file": "Baseline/2025/2025_train.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 9096942
+  },
+  {
+   "file": "Baseline/2025/2025_test.parquet",
+   "ok": true,
+   "remote_etag_matches_pin": true,
+   "remote_size": 4525089
+  }
+ ],
+ "ok": true,
+ "revision": "ad9614bdd5556767f97ced2fce797c2f06408ebf"
+}

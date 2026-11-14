@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying manuscript and this software record."
+title: "c1r-lamda-fixed-score-audit: end-to-end pipeline, aggregate data and verification code for a fixed-score audit of exact feature-vector overlap in LAMDA"
+type: software
+repository-code: "https://github.com/TheBurntPotato2605/c1r-lamda-fixed-score-audit"
+abstract: "Pipeline and data accompanying 'Exact Feature-Vector Overlap and Measured Temporal Degradation: A Fixed-Score Audit of the LAMDA Android Malware Benchmark' (manuscript in preparation)."
+authors:
+  - family-names: "Tran"
+    given-names: "Anh Son"
+    orcid: "https://orcid.org/0009-0009-9326-0840"
+  - family-names: "Le Tran Anh"
+    given-names: "Khiem"
+    orcid: "https://orcid.org/0009-0007-2482-1873"
+  - family-names: "Nguyen"
+    given-names: "Truc Quynh"
+    orcid: "https://orcid.org/0009-0006-2345-9502"
+  - family-names: "Pham Le"
+    given-names: "Duy"
+    orcid: "https://orcid.org/0009-0005-7036-2909"
+  - family-names: "Ho"
+    given-names: "Van Hai"
+    orcid: "https://orcid.org/0009-0001-8273-8257"
+references:
+  - type: dataset
+    title: "LAMDA (Baseline configuration), revision ad9614bdd5556767f97ced2fce797c2f06408ebf"
+    authors:
+      - name: "IQSeC Lab"
+    url: "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/tree/ad9614bdd5556767f97ced2fce797c2f06408ebf"

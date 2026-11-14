@@ -22,8 +22,8 @@ import os
 from fractions import Fraction as Fr
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-G5 = os.path.join(REPO, "data", "g5_aggregates")
-WP1 = os.path.join(REPO, "data", "wp1_aggregates", "WP1_S0_S4_RESULTS.json")
+G5 = os.environ.get("C1R_G5_AGGREGATES", os.path.join(REPO, "data", "g5_aggregates"))
+WP1 = os.environ.get("C1R_WP1_RESULTS", os.path.join(REPO, "data", "wp1_aggregates", "WP1_S0_S4_RESULTS.json"))
 UNITS = ["IID_2013", "IID_2014", "NEAR_2016", "NEAR_2017"] + ["FAR_%d" % y for y in range(2018, 2026)]
 FAR = UNITS[4:]
 M = ["svm", "lgbm", "xgb", "mlp"]

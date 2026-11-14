@@ -1,0 +1,28 @@
+{
+ "checks": {
+  "aggregate_tables_byte_identical_to_reference": true,
+  "cohort_sizes_equal_pin": true,
+  "keys_table_sha256_equals_pin": true,
+  "membership_digest_equals_pin": true
+ },
+ "cohort_sizes": {
+  "FAR_2018": 104292,
+  "FAR_2019": 91050,
+  "FAR_2020": 102073,
+  "FAR_2021": 81155,
+  "FAR_2022": 86416,
+  "FAR_2023": 54354,
+  "FAR_2024": 48427,
+  "FAR_2025": 44663,
+  "IID_2013": 9489,
+  "IID_2014": 5797,
+  "NEAR_2016": 109193,
+  "NEAR_2017": 99144,
+  "TRAIN": 172328
+ },
+ "distinct_train_vectors": 117230,
+ "g3_run_dir": "20261114T052518Z_G3LOCAL_public",
+ "keys_table_sha256": "cdc267890721e306cd6714540f3724bb5e303a63d76ee27f73a82d60e652551a",
+ "membership_digest": "f4b62175292564f08288ce19e05db2974cf4659464146757b190c73cbd569bc8",
+ "verdict": "PASS"
+}

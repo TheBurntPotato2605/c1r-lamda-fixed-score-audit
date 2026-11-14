@@ -1,0 +1,174 @@
+{
+ "dataset": "IQSeC-Lab/LAMDA",
+ "revision": "ad9614bdd5556767f97ced2fce797c2f06408ebf",
+ "files": [
+  {
+   "path": "Baseline/2013/2013_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2013/2013_train.parquet",
+   "size": 11092987,
+   "sha256": "0b83f9a317fa1388406f21837de422cb587cd5ab0ec401dec63f78888b847989",
+   "rows": 69144
+  },
+  {
+   "path": "Baseline/2013/2013_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2013/2013_test.parquet",
+   "size": 5038968,
+   "sha256": "208528e70c2c71c3765c4749d0293cd2816ca316dce60ef6eef42899d5aca323",
+   "rows": 17287
+  },
+  {
+   "path": "Baseline/2014/2014_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2014/2014_train.parquet",
+   "size": 12487482,
+   "sha256": "1f65b6053a174eb34a050c26162b294822d3b30e1cf83deae594f26d0b9d9a6f",
+   "rows": 80946
+  },
+  {
+   "path": "Baseline/2014/2014_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2014/2014_test.parquet",
+   "size": 5443399,
+   "sha256": "b5967aa77a1d25e9a3671fa38e266cdddd34e5436755cbaf48463ede5b4bb5bc",
+   "rows": 20237
+  },
+  {
+   "path": "Baseline/2016/2016_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2016/2016_train.parquet",
+   "size": 14398505,
+   "sha256": "8f0871a41515e1cbb45cc7cc10d6d489629efe80fc6499c8187c0c148a6155cd",
+   "rows": 87354
+  },
+  {
+   "path": "Baseline/2016/2016_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2016/2016_test.parquet",
+   "size": 5960131,
+   "sha256": "daca37c4c706d60497b2cb25bf4cec0d35a5c73dabdfbe747d6f2bf36aa3fc3f",
+   "rows": 21839
+  },
+  {
+   "path": "Baseline/2017/2017_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2017/2017_train.parquet",
+   "size": 13354470,
+   "sha256": "435e5bd1be3be3f36b332d3eb89ecfc5250c6c618f1fb1085f2f0842242b3c4c",
+   "rows": 79315
+  },
+  {
+   "path": "Baseline/2017/2017_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2017/2017_test.parquet",
+   "size": 5649193,
+   "sha256": "56a35dccadc8b51eacba89b279ada9be3e7620477d159da4068c0db3efeafa38",
+   "rows": 19829
+  },
+  {
+   "path": "Baseline/2018/2018_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2018/2018_train.parquet",
+   "size": 15607825,
+   "sha256": "ad01e1224ef3a459a29309c8ad5eceaabd6a7af8b262df0a438f9aeeae1671dd",
+   "rows": 83433
+  },
+  {
+   "path": "Baseline/2018/2018_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2018/2018_test.parquet",
+   "size": 6262941,
+   "sha256": "70618444fa642388cdbb7a0747e5b871100c73ec3289a9e78329aa2041a9bcb2",
+   "rows": 20859
+  },
+  {
+   "path": "Baseline/2019/2019_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2019/2019_train.parquet",
+   "size": 15690934,
+   "sha256": "d7ceb62a6730f02652982549a2ed4eac8160351a19b628fba1302fe97ed7d5eb",
+   "rows": 72840
+  },
+  {
+   "path": "Baseline/2019/2019_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2019/2019_test.parquet",
+   "size": 6261497,
+   "sha256": "400a46fe12a3d8110ab4a1073545f023ba148495bfe9c64220fe3dceee71653c",
+   "rows": 18210
+  },
+  {
+   "path": "Baseline/2020/2020_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2020/2020_train.parquet",
+   "size": 18017553,
+   "sha256": "19d5a25c2304d8af929167724f8785632fe8fe7249266a099603146ca11a7b80",
+   "rows": 81658
+  },
+  {
+   "path": "Baseline/2020/2020_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2020/2020_test.parquet",
+   "size": 6887534,
+   "sha256": "6d9fe6fe5232c281b08aa34d25d23eb44fbf2a14597ba6eb7d28376db8aaae7b",
+   "rows": 20415
+  },
+  {
+   "path": "Baseline/2021/2021_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2021/2021_train.parquet",
+   "size": 16466550,
+   "sha256": "b1642ef38f7669951403367bf56c745c535a9250aba4bb25a2502e123c1c30c1",
+   "rows": 64924
+  },
+  {
+   "path": "Baseline/2021/2021_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2021/2021_test.parquet",
+   "size": 6488711,
+   "sha256": "10b2bf2a96be746a80a22d59a7a95c9e4112079d29c92c67ce3c62f556458a7a",
+   "rows": 16231
+  },
+  {
+   "path": "Baseline/2022/2022_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2022/2022_train.parquet",
+   "size": 16479514,
+   "sha256": "f41b5c4f051dd5dced9adc322b221ac4fab5fa16202b07c168a80ca3d3a1662b",
+   "rows": 69132
+  },
+  {
+   "path": "Baseline/2022/2022_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2022/2022_test.parquet",
+   "size": 6489157,
+   "sha256": "4f74131f710c0dff2daf622183df0ef72b5be12ee01418897b3e4a4729313691",
+   "rows": 17284
+  },
+  {
+   "path": "Baseline/2023/2023_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2023/2023_train.parquet",
+   "size": 11087033,
+   "sha256": "b1dfb0962484943537d1a02445f69454408c6e8a82910e9ef17f418f6dfc6af0",
+   "rows": 43483
+  },
+  {
+   "path": "Baseline/2023/2023_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2023/2023_test.parquet",
+   "size": 5069927,
+   "sha256": "58f4f6356d1f88fcaeb5fa04c67a1260b4cbe736c18961dc3e51b6cd121598c2",
+   "rows": 10871
+  },
+  {
+   "path": "Baseline/2024/2024_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2024/2024_train.parquet",
+   "size": 9765856,
+   "sha256": "8cdae48a4765c9af4aae760e92f0d14dc4c2fa89a4164297a110ad0f450f78ff",
+   "rows": 38741
+  },
+  {
+   "path": "Baseline/2024/2024_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2024/2024_test.parquet",
+   "size": 4707670,
+   "sha256": "e360ff7a9a0b3f1f8c61b17c0aa5de25ce7cd3411e5bb3e2016fdf724c18f2b9",
+   "rows": 9686
+  },
+  {
+   "path": "Baseline/2025/2025_train.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2025/2025_train.parquet",
+   "size": 9096942,
+   "sha256": "cf65587318bd2820081fba89f4d1f648a33b44519dbbb88b392ba448ff498846",
+   "rows": 35730
+  },
+  {
+   "path": "Baseline/2025/2025_test.parquet",
+   "url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/resolve/ad9614bdd5556767f97ced2fce797c2f06408ebf/Baseline/2025/2025_test.parquet",
+   "size": 4525089,
+   "sha256": "702e8131a328dee30c7c1ef4373cefafc39ccc0ba8c5282257836876c783a3c6",
+   "rows": 8933
+  }
+ ]
+}

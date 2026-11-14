@@ -1,0 +1,391 @@
+{
+ "revision": "ad9614bdd5556767f97ced2fce797c2f06408ebf",
+ "verdict": "PASS",
+ "note": "Reduced public copy of the G1 remote-metadata inventory: only the fields read by the frozen G2 verify_inputs (size, footer length, raw footer SHA-256, row count, server x-linked-etag = file SHA-256). No request logs, hosts or redirect data.",
+ "files": [
+  {
+   "path": "Baseline/2013/2013_train.parquet",
+   "size": 11092987,
+   "footer_len": 2090305,
+   "raw_footer_sha256": "2e2a92ea12aba0729e5563e88a5553db4865f95d10043d295f391f1d86d21fb9",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"0b83f9a317fa1388406f21837de422cb587cd5ab0ec401dec63f78888b847989\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 69144
+    }
+   }
+  },
+  {
+   "path": "Baseline/2013/2013_test.parquet",
+   "size": 5038968,
+   "footer_len": 2090058,
+   "raw_footer_sha256": "b8bb67385e131b83838b7d5cf599f807404a3f25475d06ace60de66ecfc36c0d",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"208528e70c2c71c3765c4749d0293cd2816ca316dce60ef6eef42899d5aca323\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 17287
+    }
+   }
+  },
+  {
+   "path": "Baseline/2014/2014_train.parquet",
+   "size": 12487482,
+   "footer_len": 2090375,
+   "raw_footer_sha256": "e115bc9cb28f8184d63892e07a94a68b2854f63cc5e883c12549184f2d5d3396",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"1f65b6053a174eb34a050c26162b294822d3b30e1cf83deae594f26d0b9d9a6f\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 80946
+    }
+   }
+  },
+  {
+   "path": "Baseline/2014/2014_test.parquet",
+   "size": 5443399,
+   "footer_len": 2090061,
+   "raw_footer_sha256": "081b13a8951e5dce2b539e886021ada2a2d30e1f33242b491fdc1f6e622f09e3",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"b5967aa77a1d25e9a3671fa38e266cdddd34e5436755cbaf48463ede5b4bb5bc\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 20237
+    }
+   }
+  },
+  {
+   "path": "Baseline/2016/2016_train.parquet",
+   "size": 14398505,
+   "footer_len": 2090423,
+   "raw_footer_sha256": "36bbecf183b5ad76dc3322fb69e2a98f2cf428b7052885021b2e5881f0aee582",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"8f0871a41515e1cbb45cc7cc10d6d489629efe80fc6499c8187c0c148a6155cd\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 87354
+    }
+   }
+  },
+  {
+   "path": "Baseline/2016/2016_test.parquet",
+   "size": 5960131,
+   "footer_len": 2090060,
+   "raw_footer_sha256": "21803c354283235937d6936b495cc98e62495abf50071bea4c1161e2ce7b94c4",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"daca37c4c706d60497b2cb25bf4cec0d35a5c73dabdfbe747d6f2bf36aa3fc3f\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 21839
+    }
+   }
+  },
+  {
+   "path": "Baseline/2017/2017_train.parquet",
+   "size": 13354470,
+   "footer_len": 2090431,
+   "raw_footer_sha256": "31ef8a030eec73d60af5c12f5f5357226a7aa0f74c2254fe6245603776225cd7",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"435e5bd1be3be3f36b332d3eb89ecfc5250c6c618f1fb1085f2f0842242b3c4c\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 79315
+    }
+   }
+  },
+  {
+   "path": "Baseline/2017/2017_test.parquet",
+   "size": 5649193,
+   "footer_len": 2090060,
+   "raw_footer_sha256": "6708fdecc1474909a3cd30fae568f34def04920d2710b2b08ed6bd0ac6d19af7",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"56a35dccadc8b51eacba89b279ada9be3e7620477d159da4068c0db3efeafa38\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 19829
+    }
+   }
+  },
+  {
+   "path": "Baseline/2018/2018_train.parquet",
+   "size": 15607825,
+   "footer_len": 2090632,
+   "raw_footer_sha256": "cc80b62581afece3795cc002755c0151de464fc7b91d11289689551ab16e7535",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"ad01e1224ef3a459a29309c8ad5eceaabd6a7af8b262df0a438f9aeeae1671dd\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 83433
+    }
+   }
+  },
+  {
+   "path": "Baseline/2018/2018_test.parquet",
+   "size": 6262941,
+   "footer_len": 2090061,
+   "raw_footer_sha256": "f9d6cde3b790b570a1af3c42ffdba29c4b70856d98966a2ff3d05e4d61ee40b6",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"70618444fa642388cdbb7a0747e5b871100c73ec3289a9e78329aa2041a9bcb2\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 20859
+    }
+   }
+  },
+  {
+   "path": "Baseline/2019/2019_train.parquet",
+   "size": 15690934,
+   "footer_len": 2090547,
+   "raw_footer_sha256": "2135de827cd01de9ab40a23684d2f50383e16ec36db58dda82094a6bbbfdae91",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"d7ceb62a6730f02652982549a2ed4eac8160351a19b628fba1302fe97ed7d5eb\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 72840
+    }
+   }
+  },
+  {
+   "path": "Baseline/2019/2019_test.parquet",
+   "size": 6261497,
+   "footer_len": 2090059,
+   "raw_footer_sha256": "2ece23db51d83e42f9b696466f9881487f33a2401362ddaba26febb6671d7e90",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"400a46fe12a3d8110ab4a1073545f023ba148495bfe9c64220fe3dceee71653c\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 18210
+    }
+   }
+  },
+  {
+   "path": "Baseline/2020/2020_train.parquet",
+   "size": 18017553,
+   "footer_len": 2090697,
+   "raw_footer_sha256": "613e33b42e138a3c2b313d8258131b62ea21d15f43dece7b546841d964574800",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"19d5a25c2304d8af929167724f8785632fe8fe7249266a099603146ca11a7b80\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 81658
+    }
+   }
+  },
+  {
+   "path": "Baseline/2020/2020_test.parquet",
+   "size": 6887534,
+   "footer_len": 2090062,
+   "raw_footer_sha256": "bd724663c31b918ee446abaa000217287b56d3ae4c5a462b6ac290cf82c96c03",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"6d9fe6fe5232c281b08aa34d25d23eb44fbf2a14597ba6eb7d28376db8aaae7b\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 20415
+    }
+   }
+  },
+  {
+   "path": "Baseline/2021/2021_train.parquet",
+   "size": 16466550,
+   "footer_len": 2090673,
+   "raw_footer_sha256": "fa48766456e06e5afaa831e3b8a2667c6a9ddb2b61ce6890fb97378ba582b281",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"b1642ef38f7669951403367bf56c745c535a9250aba4bb25a2502e123c1c30c1\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 64924
+    }
+   }
+  },
+  {
+   "path": "Baseline/2021/2021_test.parquet",
+   "size": 6488711,
+   "footer_len": 2090053,
+   "raw_footer_sha256": "0a671d61154c6cdc16c08161991c199798c2b715179c2a7792e5abeeebac68d3",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"10b2bf2a96be746a80a22d59a7a95c9e4112079d29c92c67ce3c62f556458a7a\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 16231
+    }
+   }
+  },
+  {
+   "path": "Baseline/2022/2022_train.parquet",
+   "size": 16479514,
+   "footer_len": 2090641,
+   "raw_footer_sha256": "7992b0ed0132ada23623d0634405d51ce4eb9dede7aa5fa9d17111037f5b9eb4",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"f41b5c4f051dd5dced9adc322b221ac4fab5fa16202b07c168a80ca3d3a1662b\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 69132
+    }
+   }
+  },
+  {
+   "path": "Baseline/2022/2022_test.parquet",
+   "size": 6489157,
+   "footer_len": 2090059,
+   "raw_footer_sha256": "7b974402467ec4243f3b5b99d65d4bd79e6d4980666e5992561abc35da0f9e84",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"4f74131f710c0dff2daf622183df0ef72b5be12ee01418897b3e4a4729313691\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 17284
+    }
+   }
+  },
+  {
+   "path": "Baseline/2023/2023_train.parquet",
+   "size": 11087033,
+   "footer_len": 2090059,
+   "raw_footer_sha256": "da8f8dec981b9a0e31243ebe55b256d5a6234c3404b2f4be4c425b777ff14910",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"b1dfb0962484943537d1a02445f69454408c6e8a82910e9ef17f418f6dfc6af0\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 43483
+    }
+   }
+  },
+  {
+   "path": "Baseline/2023/2023_test.parquet",
+   "size": 5069927,
+   "footer_len": 2088373,
+   "raw_footer_sha256": "e588d63add3d54b9f1949609e58542076bc02681745c9329857c894a688d8d62",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"58f4f6356d1f88fcaeb5fa04c67a1260b4cbe736c18961dc3e51b6cd121598c2\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 10871
+    }
+   }
+  },
+  {
+   "path": "Baseline/2024/2024_train.parquet",
+   "size": 9765856,
+   "footer_len": 2090061,
+   "raw_footer_sha256": "9345ef8593e1b4a0955deff88372702560858ec1e3a340dd048164e0f08e6d2d",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"8cdae48a4765c9af4aae760e92f0d14dc4c2fa89a4164297a110ad0f450f78ff\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 38741
+    }
+   }
+  },
+  {
+   "path": "Baseline/2024/2024_test.parquet",
+   "size": 4707670,
+   "footer_len": 2086693,
+   "raw_footer_sha256": "91d0651cd782135e78b2537ce164d5460f69b65f25b62a061e4aeb372d05ea41",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"e360ff7a9a0b3f1f8c61b17c0aa5de25ce7cd3411e5bb3e2016fdf724c18f2b9\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 9686
+    }
+   }
+  },
+  {
+   "path": "Baseline/2025/2025_train.parquet",
+   "size": 9096942,
+   "footer_len": 2090123,
+   "raw_footer_sha256": "d3db39778f9ded53303d6059a8879e53452c9496b52723604849e2aa44c174a3",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"cf65587318bd2820081fba89f4d1f648a33b44519dbbb88b392ba448ff498846\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 35730
+    }
+   }
+  },
+  {
+   "path": "Baseline/2025/2025_test.parquet",
+   "size": 4525089,
+   "footer_len": 2085976,
+   "raw_footer_sha256": "55f61a7ae590c915da66622d6cb80ba1278b2d192311a63283bf3374b725f822",
+   "head": {
+    "provenance": {
+     "x-linked-etag (server-provided; algorithm not asserted)": "\"702e8131a328dee30c7c1ef4373cefafc39ccc0ba8c5282257836876c783a3c6\""
+    }
+   },
+   "decode": {
+    "summary": {
+     "num_rows": 8933
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "files": [
+  {
+   "file": "Baseline/2013/2013_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2013/2013_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2014/2014_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2014/2014_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2016/2016_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2016/2016_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2017/2017_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2017/2017_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2018/2018_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2018/2018_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2019/2019_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2019/2019_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2020/2020_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2020/2020_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2021/2021_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2021/2021_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2022/2022_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2022/2022_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2023/2023_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2023/2023_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2024/2024_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2024/2024_test.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2025/2025_train.parquet",
+   "status": "downloaded and verified"
+  },
+  {
+   "file": "Baseline/2025/2025_test.parquet",
+   "status": "downloaded and verified"
+  }
+ ],
+ "ok": true,
+ "revision": "ad9614bdd5556767f97ced2fce797c2f06408ebf"
+}

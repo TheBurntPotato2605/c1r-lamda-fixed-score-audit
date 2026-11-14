@@ -1,0 +1,589 @@
+{
+ "anchors": {},
+ "batch_rows": 8192,
+ "block_rows": 256,
+ "cohorts": {
+  "m_star": {
+   "2013": "2013-12",
+   "2014": "2014-08"
+  },
+  "matches_g2": false,
+  "membership_digest": "f4b62175292564f08288ce19e05db2974cf4659464146757b190c73cbd569bc8",
+  "sizes": {
+   "FAR_2018": 104292,
+   "FAR_2019": 91050,
+   "FAR_2020": 102073,
+   "FAR_2021": 81155,
+   "FAR_2022": 86416,
+   "FAR_2023": 54354,
+   "FAR_2024": 48427,
+   "FAR_2025": 44663,
+   "IID_2013": 9489,
+   "IID_2014": 5797,
+   "NEAR_2016": 109193,
+   "NEAR_2017": 99144,
+   "TRAIN": 172328
+  }
+ },
+ "conflicts": [
+  {
+   "conflict_keys": 522,
+   "distinct_keys": 117230,
+   "rows_in_conflict_keys": 3905,
+   "scope": "TRAIN"
+  },
+  {
+   "conflict_keys": 6,
+   "distinct_keys": 7318,
+   "rows_in_conflict_keys": 35,
+   "scope": "IID_2013"
+  },
+  {
+   "conflict_keys": 549,
+   "distinct_keys": 122472,
+   "rows_in_conflict_keys": 4137,
+   "scope": "TRAIN+IID_2013"
+  },
+  {
+   "conflict_keys": 1,
+   "distinct_keys": 4863,
+   "rows_in_conflict_keys": 2,
+   "scope": "IID_2014"
+  },
+  {
+   "conflict_keys": 533,
+   "distinct_keys": 121175,
+   "rows_in_conflict_keys": 3971,
+   "scope": "TRAIN+IID_2014"
+  },
+  {
+   "conflict_keys": 272,
+   "distinct_keys": 74056,
+   "rows_in_conflict_keys": 2322,
+   "scope": "NEAR_2016"
+  },
+  {
+   "conflict_keys": 1000,
+   "distinct_keys": 187791,
+   "rows_in_conflict_keys": 8002,
+   "scope": "TRAIN+NEAR_2016"
+  },
+  {
+   "conflict_keys": 178,
+   "distinct_keys": 50042,
+   "rows_in_conflict_keys": 12335,
+   "scope": "NEAR_2017"
+  },
+  {
+   "conflict_keys": 704,
+   "distinct_keys": 166935,
+   "rows_in_conflict_keys": 16935,
+   "scope": "TRAIN+NEAR_2017"
+  },
+  {
+   "conflict_keys": 326,
+   "distinct_keys": 56161,
+   "rows_in_conflict_keys": 20588,
+   "scope": "FAR_2018"
+  },
+  {
+   "conflict_keys": 870,
+   "distinct_keys": 172960,
+   "rows_in_conflict_keys": 25446,
+   "scope": "TRAIN+FAR_2018"
+  },
+  {
+   "conflict_keys": 31,
+   "distinct_keys": 67143,
+   "rows_in_conflict_keys": 307,
+   "scope": "FAR_2019"
+  },
+  {
+   "conflict_keys": 649,
+   "distinct_keys": 182941,
+   "rows_in_conflict_keys": 5223,
+   "scope": "TRAIN+FAR_2019"
+  },
+  {
+   "conflict_keys": 75,
+   "distinct_keys": 82614,
+   "rows_in_conflict_keys": 1098,
+   "scope": "FAR_2020"
+  },
+  {
+   "conflict_keys": 627,
+   "distinct_keys": 199134,
+   "rows_in_conflict_keys": 6235,
+   "scope": "TRAIN+FAR_2020"
+  },
+  {
+   "conflict_keys": 46,
+   "distinct_keys": 61690,
+   "rows_in_conflict_keys": 360,
+   "scope": "FAR_2021"
+  },
+  {
+   "conflict_keys": 593,
+   "distinct_keys": 178726,
+   "rows_in_conflict_keys": 4941,
+   "scope": "TRAIN+FAR_2021"
+  },
+  {
+   "conflict_keys": 33,
+   "distinct_keys": 75130,
+   "rows_in_conflict_keys": 437,
+   "scope": "FAR_2022"
+  },
+  {
+   "conflict_keys": 628,
+   "distinct_keys": 191838,
+   "rows_in_conflict_keys": 5315,
+   "scope": "TRAIN+FAR_2022"
+  },
+  {
+   "conflict_keys": 34,
+   "distinct_keys": 47017,
+   "rows_in_conflict_keys": 109,
+   "scope": "FAR_2023"
+  },
+  {
+   "conflict_keys": 572,
+   "distinct_keys": 164109,
+   "rows_in_conflict_keys": 4105,
+   "scope": "TRAIN+FAR_2023"
+  },
+  {
+   "conflict_keys": 10,
+   "distinct_keys": 43109,
+   "rows_in_conflict_keys": 24,
+   "scope": "FAR_2024"
+  },
+  {
+   "conflict_keys": 532,
+   "distinct_keys": 160330,
+   "rows_in_conflict_keys": 3930,
+   "scope": "TRAIN+FAR_2024"
+  },
+  {
+   "conflict_keys": 2,
+   "distinct_keys": 38021,
+   "rows_in_conflict_keys": 4,
+   "scope": "FAR_2025"
+  },
+  {
+   "conflict_keys": 524,
+   "distinct_keys": 155244,
+   "rows_in_conflict_keys": 3909,
+   "scope": "TRAIN+FAR_2025"
+  }
+ ],
+ "coverage": {
+  "authoritative": true,
+  "per_file": [
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 69144,
+    "file": "Baseline/2013/2013_train.parquet",
+    "keyed_rows": 69144
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 17287,
+    "file": "Baseline/2013/2013_test.parquet",
+    "keyed_rows": 17287
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 80946,
+    "file": "Baseline/2014/2014_train.parquet",
+    "keyed_rows": 80946
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 20237,
+    "file": "Baseline/2014/2014_test.parquet",
+    "keyed_rows": 20237
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 87354,
+    "file": "Baseline/2016/2016_train.parquet",
+    "keyed_rows": 87354
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 21839,
+    "file": "Baseline/2016/2016_test.parquet",
+    "keyed_rows": 21839
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 79315,
+    "file": "Baseline/2017/2017_train.parquet",
+    "keyed_rows": 79315
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 19829,
+    "file": "Baseline/2017/2017_test.parquet",
+    "keyed_rows": 19829
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 83433,
+    "file": "Baseline/2018/2018_train.parquet",
+    "keyed_rows": 83433
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 20859,
+    "file": "Baseline/2018/2018_test.parquet",
+    "keyed_rows": 20859
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 72840,
+    "file": "Baseline/2019/2019_train.parquet",
+    "keyed_rows": 72840
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 18210,
+    "file": "Baseline/2019/2019_test.parquet",
+    "keyed_rows": 18210
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 81658,
+    "file": "Baseline/2020/2020_train.parquet",
+    "keyed_rows": 81658
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 20415,
+    "file": "Baseline/2020/2020_test.parquet",
+    "keyed_rows": 20415
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 64924,
+    "file": "Baseline/2021/2021_train.parquet",
+    "keyed_rows": 64924
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 16231,
+    "file": "Baseline/2021/2021_test.parquet",
+    "keyed_rows": 16231
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 69132,
+    "file": "Baseline/2022/2022_train.parquet",
+    "keyed_rows": 69132
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 17284,
+    "file": "Baseline/2022/2022_test.parquet",
+    "keyed_rows": 17284
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 43483,
+    "file": "Baseline/2023/2023_train.parquet",
+    "keyed_rows": 43483
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 10871,
+    "file": "Baseline/2023/2023_test.parquet",
+    "keyed_rows": 10871
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 38741,
+    "file": "Baseline/2024/2024_train.parquet",
+    "keyed_rows": 38741
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 9686,
+    "file": "Baseline/2024/2024_test.parquet",
+    "keyed_rows": 9686
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 35730,
+    "file": "Baseline/2025/2025_train.parquet",
+    "keyed_rows": 35730
+   },
+   {
+    "coverage": 1.0,
+    "expected_rows_g1": 8933,
+    "file": "Baseline/2025/2025_test.parquet",
+    "keyed_rows": 8933
+   }
+  ]
+ },
+ "deviations": [
+  "G3-DEV-01: accepted feature domain {0,1,2}, values kept exactly as released (Manifest \u00a73.3; \u00a78.4)"
+ ],
+ "digest": "sha256_digest",
+ "elapsed_seconds": 128.7,
+ "estimability": {
+  "E2": "ESTIMABLE",
+  "primary_undefined": [],
+  "units": {
+   "FAR_2018": {
+    "F_benign": 64942,
+    "F_defined": true,
+    "F_malware": 39350,
+    "U_benign": 64467,
+    "U_defined": true,
+    "U_malware": 38282,
+    "primary": true
+   },
+   "FAR_2019": {
+    "F_benign": 49465,
+    "F_defined": true,
+    "F_malware": 41585,
+    "U_benign": 48787,
+    "U_defined": true,
+    "U_malware": 39311,
+    "primary": true
+   },
+   "FAR_2020": {
+    "F_benign": 55718,
+    "F_defined": true,
+    "F_malware": 46355,
+    "U_benign": 55598,
+    "U_defined": true,
+    "U_malware": 45417,
+    "primary": true
+   },
+   "FAR_2021": {
+    "F_benign": 45528,
+    "F_defined": true,
+    "F_malware": 35627,
+    "U_benign": 45486,
+    "U_defined": true,
+    "U_malware": 35396,
+    "primary": true
+   },
+   "FAR_2022": {
+    "F_benign": 44768,
+    "F_defined": true,
+    "F_malware": 41648,
+    "U_benign": 44724,
+    "U_defined": true,
+    "U_malware": 40976,
+    "primary": true
+   },
+   "FAR_2023": {
+    "F_benign": 46462,
+    "F_defined": true,
+    "F_malware": 7892,
+    "U_benign": 46428,
+    "U_defined": true,
+    "U_malware": 7772,
+    "primary": true
+   },
+   "FAR_2024": {
+    "F_benign": 47633,
+    "F_defined": true,
+    "F_malware": 794,
+    "U_benign": 47622,
+    "U_defined": true,
+    "U_malware": 793,
+    "primary": true
+   },
+   "FAR_2025": {
+    "F_benign": 44640,
+    "F_defined": true,
+    "F_malware": 23,
+    "U_benign": 44626,
+    "U_defined": true,
+    "U_malware": 23,
+    "primary": true
+   },
+   "IID_2013": {
+    "F_benign": 4760,
+    "F_defined": true,
+    "F_malware": 4729,
+    "U_benign": 3032,
+    "U_defined": true,
+    "U_malware": 2722,
+    "primary": true
+   },
+   "IID_2014": {
+    "F_benign": 3545,
+    "F_defined": true,
+    "F_malware": 2252,
+    "U_benign": 2437,
+    "U_defined": true,
+    "U_malware": 1782,
+    "primary": true
+   },
+   "NEAR_2016": {
+    "F_benign": 64059,
+    "F_defined": true,
+    "F_malware": 45134,
+    "U_benign": 59281,
+    "U_defined": true,
+    "U_malware": 40136,
+    "primary": false
+   },
+   "NEAR_2017": {
+    "F_benign": 77785,
+    "F_defined": true,
+    "F_malware": 21359,
+    "U_benign": 76945,
+    "U_defined": true,
+    "U_malware": 20944,
+    "primary": false
+   }
+  }
+ },
+ "exactness": {
+  "collisions_global": 0,
+  "collisions_seen": 0,
+  "collisions_train": 0,
+  "comparisons_global": 328958,
+  "comparisons_seen": 195394,
+  "comparisons_train": 55098
+ },
+ "feature_validation": {
+  "accepted_domain": [
+   0,
+   1,
+   2
+  ],
+  "cells": 4599225741,
+  "columns_with_out_of_domain": 0,
+  "columns_with_value_2": 5,
+  "deviation": "G3-DEV-01 (Manifest \u00a73.3 amended; \u00a78.4)",
+  "expected_cells": 4599225741,
+  "null_cells": 0,
+  "out_of_domain_cells": 0,
+  "out_of_domain_value_counts": {},
+  "rows": 1008381,
+  "value_0_cells": 4524135864,
+  "value_1_cells": 75089871,
+  "value_2_cells": 6
+ },
+ "finished_utc": "2026-11-14T05:27:26Z",
+ "global_distinct_vectors": 679423,
+ "inputs": {
+  "file_sha256": {
+   "Baseline/2013/2013_test.parquet": "208528e70c2c71c3765c4749d0293cd2816ca316dce60ef6eef42899d5aca323",
+   "Baseline/2013/2013_train.parquet": "0b83f9a317fa1388406f21837de422cb587cd5ab0ec401dec63f78888b847989",
+   "Baseline/2014/2014_test.parquet": "b5967aa77a1d25e9a3671fa38e266cdddd34e5436755cbaf48463ede5b4bb5bc",
+   "Baseline/2014/2014_train.parquet": "1f65b6053a174eb34a050c26162b294822d3b30e1cf83deae594f26d0b9d9a6f",
+   "Baseline/2016/2016_test.parquet": "daca37c4c706d60497b2cb25bf4cec0d35a5c73dabdfbe747d6f2bf36aa3fc3f",
+   "Baseline/2016/2016_train.parquet": "8f0871a41515e1cbb45cc7cc10d6d489629efe80fc6499c8187c0c148a6155cd",
+   "Baseline/2017/2017_test.parquet": "56a35dccadc8b51eacba89b279ada9be3e7620477d159da4068c0db3efeafa38",
+   "Baseline/2017/2017_train.parquet": "435e5bd1be3be3f36b332d3eb89ecfc5250c6c618f1fb1085f2f0842242b3c4c",
+   "Baseline/2018/2018_test.parquet": "70618444fa642388cdbb7a0747e5b871100c73ec3289a9e78329aa2041a9bcb2",
+   "Baseline/2018/2018_train.parquet": "ad01e1224ef3a459a29309c8ad5eceaabd6a7af8b262df0a438f9aeeae1671dd",
+   "Baseline/2019/2019_test.parquet": "400a46fe12a3d8110ab4a1073545f023ba148495bfe9c64220fe3dceee71653c",
+   "Baseline/2019/2019_train.parquet": "d7ceb62a6730f02652982549a2ed4eac8160351a19b628fba1302fe97ed7d5eb",
+   "Baseline/2020/2020_test.parquet": "6d9fe6fe5232c281b08aa34d25d23eb44fbf2a14597ba6eb7d28376db8aaae7b",
+   "Baseline/2020/2020_train.parquet": "19d5a25c2304d8af929167724f8785632fe8fe7249266a099603146ca11a7b80",
+   "Baseline/2021/2021_test.parquet": "10b2bf2a96be746a80a22d59a7a95c9e4112079d29c92c67ce3c62f556458a7a",
+   "Baseline/2021/2021_train.parquet": "b1642ef38f7669951403367bf56c745c535a9250aba4bb25a2502e123c1c30c1",
+   "Baseline/2022/2022_test.parquet": "4f74131f710c0dff2daf622183df0ef72b5be12ee01418897b3e4a4729313691",
+   "Baseline/2022/2022_train.parquet": "f41b5c4f051dd5dced9adc322b221ac4fab5fa16202b07c168a80ca3d3a1662b",
+   "Baseline/2023/2023_test.parquet": "58f4f6356d1f88fcaeb5fa04c67a1260b4cbe736c18961dc3e51b6cd121598c2",
+   "Baseline/2023/2023_train.parquet": "b1dfb0962484943537d1a02445f69454408c6e8a82910e9ef17f418f6dfc6af0",
+   "Baseline/2024/2024_test.parquet": "e360ff7a9a0b3f1f8c61b17c0aa5de25ce7cd3411e5bb3e2016fdf724c18f2b9",
+   "Baseline/2024/2024_train.parquet": "8cdae48a4765c9af4aae760e92f0d14dc4c2fa89a4164297a110ad0f450f78ff",
+   "Baseline/2025/2025_test.parquet": "702e8131a328dee30c7c1ef4373cefafc39ccc0ba8c5282257836876c783a3c6",
+   "Baseline/2025/2025_train.parquet": "cf65587318bd2820081fba89f4d1f648a33b44519dbbb88b392ba448ff498846"
+  },
+  "files": 24,
+  "total_rows": 1008381
+ },
+ "io_trace": {
+  "passes_files": 52,
+  "reads_touching_hash_or_vt_count": 0,
+  "unauthorized_reads": 0
+ },
+ "k_train": {
+  "distinct_train_vectors": 117230,
+  "train_rows": 172328,
+  "train_rows_keyed": 172328,
+  "train_rows_with_value_2": 0
+ },
+ "keys_table_sha256": "cdc267890721e306cd6714540f3724bb5e303a63d76ee27f73a82d60e652551a",
+ "never_read": [
+  "hash",
+  "vt_count"
+ ],
+ "nf": 4561,
+ "peak_working_set_bytes": 1309978624,
+ "phase_seconds": {
+  "A_inputs_cohorts": 3.3,
+  "B_validation": 33.9,
+  "C1_k_train": 11.1,
+  "C2_canonical_seen": 78.8
+ },
+ "pyarrow": "25.0.1",
+ "python": "3.13.3",
+ "row_conservation": {
+  "assigned": 1008381,
+  "rows": 1008381
+ },
+ "started_utc": "2026-11-14T05:25:18Z",
+ "task": "C1-R G3 LOCAL",
+ "temp_vector_store_deleted": true,
+ "value_2_rows": [
+  {
+   "any_TRAIN_vector_contains_2": false,
+   "cells_with_value_2": 1,
+   "descriptive_only_seen_if_2_were_1": false,
+   "label": "malware",
+   "partition": "train",
+   "seen_exact": false,
+   "unit": "FAR_2019"
+  },
+  {
+   "any_TRAIN_vector_contains_2": false,
+   "cells_with_value_2": 1,
+   "descriptive_only_seen_if_2_were_1": false,
+   "label": "benign",
+   "partition": "train",
+   "seen_exact": false,
+   "unit": "FAR_2020"
+  },
+  {
+   "any_TRAIN_vector_contains_2": false,
+   "cells_with_value_2": 2,
+   "descriptive_only_seen_if_2_were_1": false,
+   "label": "benign",
+   "partition": "test",
+   "seen_exact": false,
+   "unit": "FAR_2021"
+  },
+  {
+   "any_TRAIN_vector_contains_2": false,
+   "cells_with_value_2": 1,
+   "descriptive_only_seen_if_2_were_1": false,
+   "label": "benign",
+   "partition": "test",
+   "seen_exact": false,
+   "unit": "FAR_2023"
+  },
+  {
+   "any_TRAIN_vector_contains_2": false,
+   "cells_with_value_2": 1,
+   "descriptive_only_seen_if_2_were_1": false,
+   "label": "benign",
+   "partition": "train",
+   "seen_exact": false,
+   "unit": "FAR_2024"
+  }
+ ],
+ "verdict": "PASS",
+ "version": "1.1.0"
+}

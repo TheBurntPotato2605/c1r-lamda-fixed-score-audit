@@ -1,0 +1,30 @@
+{
+ "file_sha256": {
+  "Baseline/2013/2013_test.parquet": "208528e70c2c71c3765c4749d0293cd2816ca316dce60ef6eef42899d5aca323",
+  "Baseline/2013/2013_train.parquet": "0b83f9a317fa1388406f21837de422cb587cd5ab0ec401dec63f78888b847989",
+  "Baseline/2014/2014_test.parquet": "b5967aa77a1d25e9a3671fa38e266cdddd34e5436755cbaf48463ede5b4bb5bc",
+  "Baseline/2014/2014_train.parquet": "1f65b6053a174eb34a050c26162b294822d3b30e1cf83deae594f26d0b9d9a6f",
+  "Baseline/2016/2016_test.parquet": "daca37c4c706d60497b2cb25bf4cec0d35a5c73dabdfbe747d6f2bf36aa3fc3f",
+  "Baseline/2016/2016_train.parquet": "8f0871a41515e1cbb45cc7cc10d6d489629efe80fc6499c8187c0c148a6155cd",
+  "Baseline/2017/2017_test.parquet": "56a35dccadc8b51eacba89b279ada9be3e7620477d159da4068c0db3efeafa38",
+  "Baseline/2017/2017_train.parquet": "435e5bd1be3be3f36b332d3eb89ecfc5250c6c618f1fb1085f2f0842242b3c4c",
+  "Baseline/2018/2018_test.parquet": "70618444fa642388cdbb7a0747e5b871100c73ec3289a9e78329aa2041a9bcb2",
+  "Baseline/2018/2018_train.parquet": "ad01e1224ef3a459a29309c8ad5eceaabd6a7af8b262df0a438f9aeeae1671dd",
+  "Baseline/2019/2019_test.parquet": "400a46fe12a3d8110ab4a1073545f023ba148495bfe9c64220fe3dceee71653c",
+  "Baseline/2019/2019_train.parquet": "d7ceb62a6730f02652982549a2ed4eac8160351a19b628fba1302fe97ed7d5eb",
+  "Baseline/2020/2020_test.parquet": "6d9fe6fe5232c281b08aa34d25d23eb44fbf2a14597ba6eb7d28376db8aaae7b",
+  "Baseline/2020/2020_train.parquet": "19d5a25c2304d8af929167724f8785632fe8fe7249266a099603146ca11a7b80",
+  "Baseline/2021/2021_test.parquet": "10b2bf2a96be746a80a22d59a7a95c9e4112079d29c92c67ce3c62f556458a7a",
+  "Baseline/2021/2021_train.parquet": "b1642ef38f7669951403367bf56c745c535a9250aba4bb25a2502e123c1c30c1",
+  "Baseline/2022/2022_test.parquet": "4f74131f710c0dff2daf622183df0ef72b5be12ee01418897b3e4a4729313691",
+  "Baseline/2022/2022_train.parquet": "f41b5c4f051dd5dced9adc322b221ac4fab5fa16202b07c168a80ca3d3a1662b",
+  "Baseline/2023/2023_test.parquet": "58f4f6356d1f88fcaeb5fa04c67a1260b4cbe736c18961dc3e51b6cd121598c2",
+  "Baseline/2023/2023_train.parquet": "b1dfb0962484943537d1a02445f69454408c6e8a82910e9ef17f418f6dfc6af0",
+  "Baseline/2024/2024_test.parquet": "e360ff7a9a0b3f1f8c61b17c0aa5de25ce7cd3411e5bb3e2016fdf724c18f2b9",
+  "Baseline/2024/2024_train.parquet": "8cdae48a4765c9af4aae760e92f0d14dc4c2fa89a4164297a110ad0f450f78ff",
+  "Baseline/2025/2025_test.parquet": "702e8131a328dee30c7c1ef4373cefafc39ccc0ba8c5282257836876c783a3c6",
+  "Baseline/2025/2025_train.parquet": "cf65587318bd2820081fba89f4d1f648a33b44519dbbb88b392ba448ff498846"
+ },
+ "files": 24,
+ "total_rows": 1008381
+}

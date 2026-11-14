@@ -1,0 +1,44 @@
+# C1-R G4 dependency lock (PROPOSED; built from index metadata, nothing downloaded or installed)
+# Install (after approval): pip install --no-index --find-links env\wheelhouse --require-hashes -r requirements-g4.lock
+# Download step (network, after approval): pip download --only-binary=:all: --no-deps -d env\wheelhouse -r requirements-g4.lock
+#   torch must be fetched from https://download.pytorch.org/whl/cu126 (extra index) -- see lock_report.json
+filelock==4.2.9 \
+    --hash=sha256:a379c50a729e5b68c8519a4d26489f755d9769960a236ecd838190e2a78db2e9
+fsspec==2026.9.0 \
+    --hash=sha256:8dd6e646e99ea382bd85f97a45e6b526a442d79423a7dc673f1e2756d05fcb5f
+jinja2==3.1.6 \
+    --hash=sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67
+joblib==1.5.3 \
+    --hash=sha256:5fc3c5039fc5ca8c0276333a188bbd59d6b7ab37fe6632daa76bc7f9ec18e713
+lightgbm==4.6.0 \
+    --hash=sha256:37089ee95664b6550a7189d887dbf098e3eadab03537e411f52c63c121e3ba4b
+markupsafe==3.0.4 \
+    --hash=sha256:1f1f9477e174582b0a1b583d60b66e1f2cf5d3fe12cee985e4aedf44766600e5
+mpmath==1.3.0 \
+    --hash=sha256:a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c
+narwhals==2.28.0 \
+    --hash=sha256:1f69d6385ec30e2fa6e1fdeb37c562ecabd0f713f6f3e3b58a668c5c9df9567f
+networkx==3.7 \
+    --hash=sha256:e3fd2c13a7814cee3746340d8d7f8598a67f16a58bf47fb7f8793fab6efca1b0
+numpy==2.3.1 \
+    --hash=sha256:8d5ee6eec45f08ce507a6570e06f2f879b374a552087a4179ea7838edbcbfa42
+psutil==7.2.2 \
+    --hash=sha256:eb7e81434c8d223ec4a219b5fc1c47d0417b12be7ea866e24fb5ad6e84b3d988
+pyarrow==25.0.1 \
+    --hash=sha256:31e49a7888fcdf3a835da33ae777f6bb9a866334e5a789282fc26dcf426f7f15
+scikit-learn==1.9.0 \
+    --hash=sha256:5808d98f15c6bf6d9d96d2348c1997392a5888ce7097e664105f930c4bca1277
+scipy==1.18.0 \
+    --hash=sha256:1afac4a847207c7ff8efd321734a50b06d0280b3b2a2c0fc2f413101747ad7c7
+setuptools==84.2.1 \
+    --hash=sha256:ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2
+sympy==1.14.0 \
+    --hash=sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5
+threadpoolctl==3.6.0 \
+    --hash=sha256:43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb
+torch==2.7.1+cu126 \
+    --hash=sha256:a38a903c9b55cea1217100e0851b25659765b6bb8cd75e6de6bbf0063a2cd51e
+typing-extensions==4.16.0 \
+    --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8
+xgboost==3.3.0 \
+    --hash=sha256:b06057f6a018fc04e6b3e0c15568ca636b8151a5b5f333478e500fcaf4fc7594

@@ -1,0 +1,85 @@
+{
+ "description": "Reference digests of the 20 original sealed score tables (hash strings only). seal_sha256 = Manifest P4 seal over (gid, score) rows; scores_file_sha256 = SHA-256 of the original parquet file.",
+ "slots": {
+  "svm_r1": {
+   "seal_sha256": "e1f2d6ec33ff77470f5eaec3ecdc9a9f12c42b0d6c8b5a0ee87996f267a77892",
+   "scores_file_sha256": "836c350ebaf2fd380e23add1f4220f3db3a8c39aa31751a0af0ff1321a29e118"
+  },
+  "svm_r2": {
+   "seal_sha256": "e1f2d6ec33ff77470f5eaec3ecdc9a9f12c42b0d6c8b5a0ee87996f267a77892",
+   "scores_file_sha256": "836c350ebaf2fd380e23add1f4220f3db3a8c39aa31751a0af0ff1321a29e118"
+  },
+  "svm_r3": {
+   "seal_sha256": "e1f2d6ec33ff77470f5eaec3ecdc9a9f12c42b0d6c8b5a0ee87996f267a77892",
+   "scores_file_sha256": "836c350ebaf2fd380e23add1f4220f3db3a8c39aa31751a0af0ff1321a29e118"
+  },
+  "svm_r4": {
+   "seal_sha256": "e1f2d6ec33ff77470f5eaec3ecdc9a9f12c42b0d6c8b5a0ee87996f267a77892",
+   "scores_file_sha256": "836c350ebaf2fd380e23add1f4220f3db3a8c39aa31751a0af0ff1321a29e118"
+  },
+  "svm_r5": {
+   "seal_sha256": "e1f2d6ec33ff77470f5eaec3ecdc9a9f12c42b0d6c8b5a0ee87996f267a77892",
+   "scores_file_sha256": "836c350ebaf2fd380e23add1f4220f3db3a8c39aa31751a0af0ff1321a29e118"
+  },
+  "mlp_r1": {
+   "seal_sha256": "a80458b634eb02e21fddd00841536054d6c97a0e83c8ba41d13c1e450e62d963",
+   "scores_file_sha256": "a95da716045fdf5b84cb936eca8b355a6d5786a01a3251f6d6f2b03f84f5fa45"
+  },
+  "mlp_r2": {
+   "seal_sha256": "acae571a91e1ca034d5dae83e4b596d04f9702284346fc64af148fbb08750646",
+   "scores_file_sha256": "db848e5739aef0bb988c5ab2c93b1245ea9577f203d41decb3a7effaf6cf90f5"
+  },
+  "mlp_r3": {
+   "seal_sha256": "b1aa70ce01aac5f7ec35232d7c31d986d5e2f9b7190646b319792092dd9e217a",
+   "scores_file_sha256": "981cbdcb921815211cc1be1155d314cdbbc74bcc230c5d86089faabf038b4cbf"
+  },
+  "mlp_r4": {
+   "seal_sha256": "2645c109a0469817007edc402496d4bec8def49cc3d09f2a8ba258afd1e0c84d",
+   "scores_file_sha256": "41145c31d9862053408107048fe2f832cc5bcbb496c6ad03062e0620c837bdba"
+  },
+  "mlp_r5": {
+   "seal_sha256": "8d90e105074bc4c1676387c5b0899c5adf02cd85895631b10428576d4032ef64",
+   "scores_file_sha256": "633c80ce6e9e15e328b97ed2c8ef340b7c9fb296dd5f8bfb34221e30dbf8f8b7"
+  },
+  "xgb_r1": {
+   "seal_sha256": "33b8c3cd3a4d04eca43dc323ecfda5226fa8d78f302f718080d8fe8ba83a6155",
+   "scores_file_sha256": "d6ee11d9efbf4c02e9100676f9c346c522618ebe1155543dd5107a2ed23a49a9"
+  },
+  "xgb_r2": {
+   "seal_sha256": "33b8c3cd3a4d04eca43dc323ecfda5226fa8d78f302f718080d8fe8ba83a6155",
+   "scores_file_sha256": "d6ee11d9efbf4c02e9100676f9c346c522618ebe1155543dd5107a2ed23a49a9"
+  },
+  "xgb_r3": {
+   "seal_sha256": "33b8c3cd3a4d04eca43dc323ecfda5226fa8d78f302f718080d8fe8ba83a6155",
+   "scores_file_sha256": "d6ee11d9efbf4c02e9100676f9c346c522618ebe1155543dd5107a2ed23a49a9"
+  },
+  "xgb_r4": {
+   "seal_sha256": "33b8c3cd3a4d04eca43dc323ecfda5226fa8d78f302f718080d8fe8ba83a6155",
+   "scores_file_sha256": "d6ee11d9efbf4c02e9100676f9c346c522618ebe1155543dd5107a2ed23a49a9"
+  },
+  "xgb_r5": {
+   "seal_sha256": "33b8c3cd3a4d04eca43dc323ecfda5226fa8d78f302f718080d8fe8ba83a6155",
+   "scores_file_sha256": "d6ee11d9efbf4c02e9100676f9c346c522618ebe1155543dd5107a2ed23a49a9"
+  },
+  "lgbm_r1": {
+   "seal_sha256": "fa30575ba58f5596ff5ecc048bf8985255ed075e00cd5f34d4a7cf0478a29704",
+   "scores_file_sha256": "310277e02a7a279ae8225a89074f07ef266296460a2ded1b39ffcd973dfe1df7"
+  },
+  "lgbm_r2": {
+   "seal_sha256": "1ff46006ce2e8000cc65a9d5308fee8cf9c53b6fd2271d6bff1a6b3c73792176",
+   "scores_file_sha256": "171d9a618c8e9b9fd4edbe6c55e489f71e27ccfc730417f1f2393455b2fbbad5"
+  },
+  "lgbm_r3": {
+   "seal_sha256": "82bafef41cbdca763c13018d0b4a884d19639c360c4b2b74f05a58d2cc461499",
+   "scores_file_sha256": "179f62e1915fe37858caf3a544db108faae77546f20f3aaf2327eb90b5372001"
+  },
+  "lgbm_r4": {
+   "seal_sha256": "5947da419fa854e571b12f68f77c2fb25f7a543b961df031b5b669d5a7b4426d",
+   "scores_file_sha256": "ea2646f48713ccf6e05ca4cc92e0f4b58f2496948a470f621489d2a8fc310c7f"
+  },
+  "lgbm_r5": {
+   "seal_sha256": "32992b6deacd7eedb7f0708fadd39532ab182fbcebffd450258564e3f2826bfd",
+   "scores_file_sha256": "c18336bc85d3d784e7646bcf7806a8b7416e4799e24b886bb5a3c294d8ebbee9"
+  }
+ }
+}

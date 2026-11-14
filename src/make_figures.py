@@ -49,12 +49,17 @@ GRID = "#d9d9d9"
 W_IN = 4.80  # 122 mm text width of svproc.cls
 
 
+SKIP_PIN = "--skip-pin-check" in sys.argv      # newly computed aggregates (end-to-end pipeline) are not the pinned reference files
+if SKIP_PIN:
+    sys.argv.remove("--skip-pin-check")
+
+
 def load_verified(g5dir):
     data = {}
     for name, want in EXPECTED_SHA256.items():
         raw = open(os.path.join(g5dir, name), "rb").read()
         got = hashlib.sha256(raw).hexdigest()
-        if got != want:
+        if got != want and not SKIP_PIN:
             raise SystemExit("SHA-256 MISMATCH for %s: %s != %s -- STOP" % (name, got, want))
         data[name] = json.loads(raw)
     return data

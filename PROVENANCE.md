@@ -44,3 +44,10 @@ places the legend below panel b on a canvas 0.25 in taller, keeping panel sizes,
 * `wp1_independent_check.py`: PASS, 8,530 checks.
 * `make_tables.py`: every generated row is found verbatim in the corrected manuscript source.
 * `make_figures.py`: plotted values identical to those of the original script; Figures 2 and 3 are rendered with matplotlib 3.10.3.
+
+## End-to-end pipeline (added in release 2.0.0)
+
+* `pipeline/frozen/src/`: the frozen C1-R scientific sources. Original SHA-256, published SHA-256 and AST-parity hashes per file, the SHA-256 recorded in the manifests of all 20 original runs (V6 for run 1, V6.1 for runs 2-5) and the original job's scientific call sequence are in `pipeline/frozen/frozen_source_manifest.json`; `pipeline/PARITY.md` explains the four files whose private path literals were neutralised and the public wrappers.
+* `pipeline/reference/`: `dataset_files.json` (24 files: URL, size, SHA-256, rows) and `g1_inventory.json` (reduced copy of the original G1 remote-metadata inventory: size, footer length and footer SHA-256, row count, server x-linked-etag = file SHA-256) derive from the G1 inventory of 4 November 2026; `original_seals.json` holds the seal and file SHA-256 of the 20 original score tables (from the internal G5 authorization record, hash strings only).
+* `pipeline/verification/`: logs of the stages executed on real data (download, verify, cohorts), the synthetic end-to-end log.
+* `data/g3_aggregates/G3_AGGREGATE_TABLES.csv` was reproduced byte for byte by the public pipeline from a fresh download (together with the conflicts, coverage and estimability tables).
