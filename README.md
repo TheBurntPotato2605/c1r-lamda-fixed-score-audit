@@ -119,5 +119,6 @@ See `CITATION.cff`.
 
 ## License
 
-No license has been granted for this repository; all rights are reserved by the authors (`LICENSE_STATUS.md`). The LAMDA
-dataset and code are third-party material under their owners' terms and are not redistributed here.
+The authors' original source code is released under the MIT License (`LICENSE`); aggregate results, figures, evidence
+and documentation are not covered by it. The LAMDA dataset and code are third-party material under their owners' terms
+and are not redistributed here. Scope and attribution: `NOTICE.md`.

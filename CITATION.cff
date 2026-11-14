@@ -3,6 +3,7 @@ message: "If you use this repository, please cite the accompanying manuscript an
 title: "c1r-lamda-fixed-score-audit: end-to-end pipeline, aggregate data and verification code for a fixed-score audit of exact feature-vector overlap in LAMDA"
 type: software
 version: "2.1.0"
+license: MIT
 repository-code: "https://github.com/TheBurntPotato2605/c1r-lamda-fixed-score-audit"
 abstract: "Pipeline and data accompanying 'Exact Feature-Vector Overlap and Measured Temporal Degradation: A Fixed-Score Audit of the LAMDA Android Malware Benchmark' (manuscript in preparation)."
 authors:
