@@ -1,0 +1,5 @@
+# Interpreter used for the verification runs recorded in this repository: CPython 3.13.3 (Windows).
+# The S0-S4 analysis, the independent check and the tables use only the Python standard library.
+# Figures (src/make_figures.py) additionally need:
+matplotlib==3.10.3
+numpy==2.3.1

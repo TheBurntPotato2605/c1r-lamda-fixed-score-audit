@@ -1,0 +1,434 @@
+{
+ "FAR_2018": {
+  "F": {
+   "all_zero_rows": 6,
+   "benign": 64942,
+   "conflict_keys": 326,
+   "distinct_keys": 56161,
+   "malware": 39350,
+   "n": 104292,
+   "prevalence": {
+    "exact": "19675/52146",
+    "value": 0.37730602539025043
+   },
+   "seen_rate": {
+    "exact": "1543/104292",
+    "value": 0.014794998657615157
+   },
+   "seen_rows": {
+    "benign": 475,
+    "malware": 1068
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 64467,
+   "conflict_keys": 316,
+   "distinct_keys": 55730,
+   "malware": 38282,
+   "n": 102749,
+   "prevalence": {
+    "exact": "38282/102749",
+    "value": 0.3725778353073996
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "FAR_2019": {
+  "F": {
+   "all_zero_rows": 0,
+   "benign": 49465,
+   "conflict_keys": 31,
+   "distinct_keys": 67143,
+   "malware": 41585,
+   "n": 91050,
+   "prevalence": {
+    "exact": "8317/18210",
+    "value": 0.456727073036793
+   },
+   "seen_rate": {
+    "exact": "492/15175",
+    "value": 0.03242174629324547
+   },
+   "seen_rows": {
+    "benign": 678,
+    "malware": 2274
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 48787,
+   "conflict_keys": 25,
+   "distinct_keys": 65711,
+   "malware": 39311,
+   "n": 88098,
+   "prevalence": {
+    "exact": "39311/88098",
+    "value": 0.4462189834048446
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "FAR_2020": {
+  "F": {
+   "all_zero_rows": 4,
+   "benign": 55718,
+   "conflict_keys": 75,
+   "distinct_keys": 82614,
+   "malware": 46355,
+   "n": 102073,
+   "prevalence": {
+    "exact": "46355/102073",
+    "value": 0.4541357655795362
+   },
+   "seen_rate": {
+    "exact": "1058/102073",
+    "value": 0.010365130837733778
+   },
+   "seen_rows": {
+    "benign": 120,
+    "malware": 938
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 55598,
+   "conflict_keys": 65,
+   "distinct_keys": 81904,
+   "malware": 45417,
+   "n": 101015,
+   "prevalence": {
+    "exact": "45417/101015",
+    "value": 0.4496064940850369
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "FAR_2021": {
+  "F": {
+   "all_zero_rows": 5,
+   "benign": 45528,
+   "conflict_keys": 46,
+   "distinct_keys": 61690,
+   "malware": 35627,
+   "n": 81155,
+   "prevalence": {
+    "exact": "35627/81155",
+    "value": 0.4389994455055141
+   },
+   "seen_rate": {
+    "exact": "273/81155",
+    "value": 0.003363933214219703
+   },
+   "seen_rows": {
+    "benign": 42,
+    "malware": 231
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 45486,
+   "conflict_keys": 42,
+   "distinct_keys": 61496,
+   "malware": 35396,
+   "n": 80882,
+   "prevalence": {
+    "exact": "17698/40441",
+    "value": 0.43762518236443215
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "FAR_2022": {
+  "F": {
+   "all_zero_rows": 3,
+   "benign": 44768,
+   "conflict_keys": 33,
+   "distinct_keys": 75130,
+   "malware": 41648,
+   "n": 86416,
+   "prevalence": {
+    "exact": "2603/5401",
+    "value": 0.48194778744676914
+   },
+   "seen_rate": {
+    "exact": "179/21604",
+    "value": 0.00828550268468802
+   },
+   "seen_rows": {
+    "benign": 44,
+    "malware": 672
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 44724,
+   "conflict_keys": 28,
+   "distinct_keys": 74608,
+   "malware": 40976,
+   "n": 85700,
+   "prevalence": {
+    "exact": "10244/21425",
+    "value": 0.47813302217036174
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "FAR_2023": {
+  "F": {
+   "all_zero_rows": 0,
+   "benign": 46462,
+   "conflict_keys": 34,
+   "distinct_keys": 47017,
+   "malware": 7892,
+   "n": 54354,
+   "prevalence": {
+    "exact": "3946/27177",
+    "value": 0.1451963056996725
+   },
+   "seen_rate": {
+    "exact": "77/27177",
+    "value": 0.002833278139603341
+   },
+   "seen_rows": {
+    "benign": 34,
+    "malware": 120
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 46428,
+   "conflict_keys": 32,
+   "distinct_keys": 46879,
+   "malware": 7772,
+   "n": 54200,
+   "prevalence": {
+    "exact": "1943/13550",
+    "value": 0.1433948339483395
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "FAR_2024": {
+  "F": {
+   "all_zero_rows": 0,
+   "benign": 47633,
+   "conflict_keys": 10,
+   "distinct_keys": 43109,
+   "malware": 794,
+   "n": 48427,
+   "prevalence": {
+    "exact": "794/48427",
+    "value": 0.01639581225349495
+   },
+   "seen_rate": {
+    "exact": "12/48427",
+    "value": 0.0002477956511863217
+   },
+   "seen_rows": {
+    "benign": 11,
+    "malware": 1
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 47622,
+   "conflict_keys": 10,
+   "distinct_keys": 43100,
+   "malware": 793,
+   "n": 48415,
+   "prevalence": {
+    "exact": "793/48415",
+    "value": 0.016379221315707942
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "FAR_2025": {
+  "F": {
+   "all_zero_rows": 0,
+   "benign": 44640,
+   "conflict_keys": 2,
+   "distinct_keys": 38021,
+   "malware": 23,
+   "n": 44663,
+   "prevalence": {
+    "exact": "23/44663",
+    "value": 0.0005149676465978551
+   },
+   "seen_rate": {
+    "exact": "14/44663",
+    "value": 0.00031345856749434657
+   },
+   "seen_rows": {
+    "benign": 14,
+    "malware": 0
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 44626,
+   "conflict_keys": 2,
+   "distinct_keys": 38014,
+   "malware": 23,
+   "n": 44649,
+   "prevalence": {
+    "exact": "23/44649",
+    "value": 0.0005151291182333311
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "IID_2013": {
+  "F": {
+   "all_zero_rows": 0,
+   "benign": 4760,
+   "conflict_keys": 6,
+   "distinct_keys": 7318,
+   "malware": 4729,
+   "n": 9489,
+   "prevalence": {
+    "exact": "4729/9489",
+    "value": 0.498366529665929
+   },
+   "seen_rate": {
+    "exact": "1245/3163",
+    "value": 0.3936136579196965
+   },
+   "seen_rows": {
+    "benign": 1728,
+    "malware": 2007
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 3032,
+   "conflict_keys": 0,
+   "distinct_keys": 5242,
+   "malware": 2722,
+   "n": 5754,
+   "prevalence": {
+    "exact": "1361/2877",
+    "value": 0.473062217587765
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "IID_2014": {
+  "F": {
+   "all_zero_rows": 2,
+   "benign": 3545,
+   "conflict_keys": 1,
+   "distinct_keys": 4863,
+   "malware": 2252,
+   "n": 5797,
+   "prevalence": {
+    "exact": "2252/5797",
+    "value": 0.38847679834397103
+   },
+   "seen_rate": {
+    "exact": "1578/5797",
+    "value": 0.27220976367086425
+   },
+   "seen_rows": {
+    "benign": 1108,
+    "malware": 470
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 2437,
+   "conflict_keys": 0,
+   "distinct_keys": 3945,
+   "malware": 1782,
+   "n": 4219,
+   "prevalence": {
+    "exact": "1782/4219",
+    "value": 0.4223749703721261
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "NEAR_2016": {
+  "F": {
+   "all_zero_rows": 9,
+   "benign": 64059,
+   "conflict_keys": 272,
+   "distinct_keys": 74056,
+   "malware": 45134,
+   "n": 109193,
+   "prevalence": {
+    "exact": "45134/109193",
+    "value": 0.41334151456595203
+   },
+   "seen_rate": {
+    "exact": "9776/109193",
+    "value": 0.08952954859743756
+   },
+   "seen_rows": {
+    "benign": 4778,
+    "malware": 4998
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 59281,
+   "conflict_keys": 211,
+   "distinct_keys": 70561,
+   "malware": 40136,
+   "n": 99417,
+   "prevalence": {
+    "exact": "40136/99417",
+    "value": 0.4037136505828983
+   },
+   "unknown_month_rows": 0
+  }
+ },
+ "NEAR_2017": {
+  "F": {
+   "all_zero_rows": 13,
+   "benign": 77785,
+   "conflict_keys": 178,
+   "distinct_keys": 50042,
+   "malware": 21359,
+   "n": 99144,
+   "prevalence": {
+    "exact": "21359/99144",
+    "value": 0.21543411603324458
+   },
+   "seen_rate": {
+    "exact": "1255/99144",
+    "value": 0.01265835552327927
+   },
+   "seen_rows": {
+    "benign": 840,
+    "malware": 415
+   },
+   "unknown_month_rows": 0
+  },
+  "U": {
+   "all_zero_rows": 0,
+   "benign": 76945,
+   "conflict_keys": 172,
+   "distinct_keys": 49705,
+   "malware": 20944,
+   "n": 97889,
+   "prevalence": {
+    "exact": "1904/8899",
+    "value": 0.21395662433981347
+   },
+   "unknown_month_rows": 0
+  }
+ }
+}

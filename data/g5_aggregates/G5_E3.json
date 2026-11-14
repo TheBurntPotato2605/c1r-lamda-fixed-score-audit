@@ -1,0 +1,488 @@
+{
+ "FAR_2018": {
+  "AUC_max": {
+   "exact": "5109434651/5110935400",
+   "value": 0.999706365100995
+  },
+  "E_min": 683,
+  "N": 64942,
+  "P": 39350,
+  "all_zero_key_pn": {
+   "n": 6,
+   "p": 0
+  },
+  "conflict_keys": 326,
+  "rate": {
+   "exact": "683/104292",
+   "value": 0.006548920339048058
+  },
+  "rows_in_conflict_keys": 20588
+ },
+ "FAR_2019": {
+  "AUC_max": {
+   "exact": "4113996589/4114004050",
+   "value": 0.9999981864383435
+  },
+  "E_min": 82,
+  "N": 49465,
+  "P": 41585,
+  "all_zero_key_pn": {
+   "n": 0,
+   "p": 0
+  },
+  "conflict_keys": 31,
+  "rate": {
+   "exact": "41/45525",
+   "value": 0.0009006040637012631
+  },
+  "rows_in_conflict_keys": 307
+ },
+ "FAR_2020": {
+  "AUC_max": {
+   "exact": "2582793013/2582807890",
+   "value": 0.9999942399897191
+  },
+  "E_min": 118,
+  "N": 55718,
+  "P": 46355,
+  "all_zero_key_pn": {
+   "n": 3,
+   "p": 1
+  },
+  "conflict_keys": 75,
+  "rate": {
+   "exact": "118/102073",
+   "value": 0.0011560353864391172
+  },
+  "rows_in_conflict_keys": 1098
+ },
+ "FAR_2021": {
+  "AUC_max": {
+   "exact": "135168403/135168838",
+   "value": 0.9999967818026223
+  },
+  "E_min": 84,
+  "N": 45528,
+  "P": 35627,
+  "all_zero_key_pn": {
+   "n": 5,
+   "p": 0
+  },
+  "conflict_keys": 46,
+  "rate": {
+   "exact": "84/81155",
+   "value": 0.0010350563736060624
+  },
+  "rows_in_conflict_keys": 360
+ },
+ "FAR_2022": {
+  "AUC_max": {
+   "exact": "466122809/466124416",
+   "value": 0.9999965524226047
+  },
+  "E_min": 74,
+  "N": 44768,
+  "P": 41648,
+  "all_zero_key_pn": {
+   "n": 3,
+   "p": 0
+  },
+  "conflict_keys": 33,
+  "rate": {
+   "exact": "37/43208",
+   "value": 0.0008563229031660804
+  },
+  "rows_in_conflict_keys": 437
+ },
+ "FAR_2023": {
+  "AUC_max": {
+   "exact": "366677291/366678104",
+   "value": 0.9999977827964334
+  },
+  "E_min": 37,
+  "N": 46462,
+  "P": 7892,
+  "all_zero_key_pn": {
+   "n": 0,
+   "p": 0
+  },
+  "conflict_keys": 34,
+  "rate": {
+   "exact": "37/54354",
+   "value": 0.0006807226699046988
+  },
+  "rows_in_conflict_keys": 109
+ },
+ "FAR_2024": {
+  "AUC_max": {
+   "exact": "37820549/37820602",
+   "value": 0.9999985986473722
+  },
+  "E_min": 10,
+  "N": 47633,
+  "P": 794,
+  "all_zero_key_pn": {
+   "n": 0,
+   "p": 0
+  },
+  "conflict_keys": 10,
+  "rate": {
+   "exact": "10/48427",
+   "value": 0.0002064963759886014
+  },
+  "rows_in_conflict_keys": 24
+ },
+ "FAR_2025": {
+  "AUC_max": {
+   "exact": "513359/513360",
+   "value": 0.9999980520492442
+  },
+  "E_min": 2,
+  "N": 44640,
+  "P": 23,
+  "all_zero_key_pn": {
+   "n": 0,
+   "p": 0
+  },
+  "conflict_keys": 2,
+  "rate": {
+   "exact": "2/44663",
+   "value": 4.477979535633522e-05
+  },
+  "rows_in_conflict_keys": 4
+ },
+ "IID_2013": {
+  "AUC_max": {
+   "exact": "1607857/1607860",
+   "value": 0.99999813416591
+  },
+  "E_min": 7,
+  "N": 4760,
+  "P": 4729,
+  "all_zero_key_pn": {
+   "n": 0,
+   "p": 0
+  },
+  "conflict_keys": 6,
+  "rate": {
+   "exact": "7/9489",
+   "value": 0.0007376962799030457
+  },
+  "rows_in_conflict_keys": 35
+ },
+ "IID_2014": {
+  "AUC_max": {
+   "exact": "15966679/15966680",
+   "value": 0.9999999373695722
+  },
+  "E_min": 1,
+  "N": 3545,
+  "P": 2252,
+  "all_zero_key_pn": {
+   "n": 2,
+   "p": 0
+  },
+  "conflict_keys": 1,
+  "rate": {
+   "exact": "1/5797",
+   "value": 0.00017250301880282904
+  },
+  "rows_in_conflict_keys": 2
+ },
+ "NEAR_2016": {
+  "AUC_max": {
+   "exact": "1445554856/1445619453",
+   "value": 0.9999553153495092
+  },
+  "E_min": 446,
+  "N": 64059,
+  "P": 45134,
+  "all_zero_key_pn": {
+   "n": 9,
+   "p": 0
+  },
+  "conflict_keys": 272,
+  "rate": {
+   "exact": "446/109193",
+   "value": 0.00408451091187164
+  },
+  "rows_in_conflict_keys": 2322
+ },
+ "NEAR_2017": {
+  "AUC_max": {
+   "exact": "3321506803/3322819630",
+   "value": 0.9996049057288132
+  },
+  "E_min": 480,
+  "N": 77785,
+  "P": 21359,
+  "all_zero_key_pn": {
+   "n": 13,
+   "p": 0
+  },
+  "conflict_keys": 178,
+  "rate": {
+   "exact": "20/4131",
+   "value": 0.004841442749939482
+  },
+  "rows_in_conflict_keys": 12335
+ },
+ "TRAIN": {
+  "AUC_max": {
+   "exact": "14829536021/14830397720",
+   "value": 0.9999418964335098
+  },
+  "E_min": 786,
+  "N": 89170,
+  "P": 83158,
+  "all_zero_key_pn": {
+   "n": 20,
+   "p": 0
+  },
+  "conflict_keys": 522,
+  "rate": {
+   "exact": "393/86164",
+   "value": 0.004561069588227102
+  },
+  "rows_in_conflict_keys": 3905
+ },
+ "TRAIN+FAR_2018": {
+  "AUC_max": {
+   "exact": "37755007667/37759905792",
+   "value": 0.9998702823829333
+  },
+  "E_min": 1573,
+  "N": 154112,
+  "P": 122508,
+  "all_zero_key_pn": {
+   "n": 26,
+   "p": 0
+  },
+  "conflict_keys": 870,
+  "rate": {
+   "exact": "1573/276620",
+   "value": 0.005686501337575012
+  },
+  "rows_in_conflict_keys": 25446
+ },
+ "TRAIN+FAR_2019": {
+  "AUC_max": {
+   "exact": "5764331898/5764581935",
+   "value": 0.9999566253020914
+  },
+  "E_min": 1050,
+  "N": 138635,
+  "P": 124743,
+  "all_zero_key_pn": {
+   "n": 20,
+   "p": 0
+  },
+  "conflict_keys": 649,
+  "rate": {
+   "exact": "525/131689",
+   "value": 0.003986665552931528
+  },
+  "rows_in_conflict_keys": 5223
+ },
+ "TRAIN+FAR_2020": {
+  "AUC_max": {
+   "exact": "260613179/260623327",
+   "value": 0.9999610625797897
+  },
+  "E_min": 1004,
+  "N": 144888,
+  "P": 129513,
+  "all_zero_key_pn": {
+   "n": 23,
+   "p": 1
+  },
+  "conflict_keys": 627,
+  "rate": {
+   "exact": "1004/274401",
+   "value": 0.003658878794173491
+  },
+  "rows_in_conflict_keys": 6235
+ },
+ "TRAIN+FAR_2021": {
+  "AUC_max": {
+   "exact": "31999022819/32000203860",
+   "value": 0.9999630927038725
+  },
+  "E_min": 918,
+  "N": 134698,
+  "P": 118785,
+  "all_zero_key_pn": {
+   "n": 25,
+   "p": 0
+  },
+  "conflict_keys": 593,
+  "rate": {
+   "exact": "918/253483",
+   "value": 0.003621544640074482
+  },
+  "rows_in_conflict_keys": 4941
+ },
+ "TRAIN+FAR_2022": {
+  "AUC_max": {
+   "exact": "530653531/530675112",
+   "value": 0.9999593329336312
+  },
+  "E_min": 978,
+  "N": 133938,
+  "P": 124806,
+  "all_zero_key_pn": {
+   "n": 23,
+   "p": 0
+  },
+  "conflict_keys": 628,
+  "rate": {
+   "exact": "163/43124",
+   "value": 0.0037797977924125775
+  },
+  "rows_in_conflict_keys": 5315
+ },
+ "TRAIN+FAR_2023": {
+  "AUC_max": {
+   "exact": "8232536131/8232862400",
+   "value": 0.9999603699194584
+  },
+  "E_min": 845,
+  "N": 135632,
+  "P": 91050,
+  "all_zero_key_pn": {
+   "n": 20,
+   "p": 0
+  },
+  "conflict_keys": 572,
+  "rate": {
+   "exact": "845/226682",
+   "value": 0.003727689009272902
+  },
+  "rows_in_conflict_keys": 4105
+ },
+ "TRAIN+FAR_2024": {
+  "AUC_max": {
+   "exact": "7656297425/7656590304",
+   "value": 0.9999617481165413
+  },
+  "E_min": 796,
+  "N": 136803,
+  "P": 83952,
+  "all_zero_key_pn": {
+   "n": 20,
+   "p": 0
+  },
+  "conflict_keys": 532,
+  "rate": {
+   "exact": "796/220755",
+   "value": 0.003605807342982039
+  },
+  "rows_in_conflict_keys": 3930
+ },
+ "TRAIN+FAR_2025": {
+  "AUC_max": {
+   "exact": "22260034373/22260899220",
+   "value": 0.9999611495029265
+  },
+  "E_min": 788,
+  "N": 133810,
+  "P": 83181,
+  "all_zero_key_pn": {
+   "n": 20,
+   "p": 0
+  },
+  "conflict_keys": 524,
+  "rate": {
+   "exact": "788/216991",
+   "value": 0.0036314870201989945
+  },
+  "rows_in_conflict_keys": 3909
+ },
+ "TRAIN+IID_2013": {
+  "AUC_max": {
+   "exact": "2751582603/2751741970",
+   "value": 0.9999420850494932
+  },
+  "E_min": 825,
+  "N": 93930,
+  "P": 87887,
+  "all_zero_key_pn": {
+   "n": 20,
+   "p": 0
+  },
+  "conflict_keys": 549,
+  "rate": {
+   "exact": "825/181817",
+   "value": 0.004537529493941711
+  },
+  "rows_in_conflict_keys": 4137
+ },
+ "TRAIN+IID_2014": {
+  "AUC_max": {
+   "exact": "58654391/58657690",
+   "value": 0.9999437584398567
+  },
+  "E_min": 801,
+  "N": 92715,
+  "P": 85410,
+  "all_zero_key_pn": {
+   "n": 22,
+   "p": 0
+  },
+  "conflict_keys": 533,
+  "rate": {
+   "exact": "267/59375",
+   "value": 0.004496842105263158
+  },
+  "rows_in_conflict_keys": 3971
+ },
+ "TRAIN+NEAR_2016": {
+  "AUC_max": {
+   "exact": "19656229117/19658054868",
+   "value": 0.9999071245343316
+  },
+  "E_min": 1639,
+  "N": 153229,
+  "P": 128292,
+  "all_zero_key_pn": {
+   "n": 29,
+   "p": 0
+  },
+  "conflict_keys": 1000,
+  "rate": {
+   "exact": "1639/281521",
+   "value": 0.005821945787348013
+  },
+  "rows_in_conflict_keys": 8002
+ },
+ "TRAIN+NEAR_2017": {
+  "AUC_max": {
+   "exact": "17447783461/17449635735",
+   "value": 0.9998938502769841
+  },
+  "E_min": 1310,
+  "N": 166955,
+  "P": 104517,
+  "all_zero_key_pn": {
+   "n": 33,
+   "p": 0
+  },
+  "conflict_keys": 704,
+  "rate": {
+   "exact": "655/135736",
+   "value": 0.004825543702481287
+  },
+  "rows_in_conflict_keys": 16935
+ },
+ "_FAR_equal_year_average_of_AUC_max": {
+  "TRAIN_plus_unit_scope": {
+   "exact": "22724330928747934082570812395675229605117356352458669175823/22725485203179623297857424412603530278494352725727938969600",
+   "value": 0.9999492079301555
+  },
+  "label": "average of per-scope bounds; not necessarily jointly attainable by a single scoring rule (F-03)",
+  "unit_scope": {
+   "exact": "589650294848652410291702032382536889622887515965290941/589673398307876485881094223465800990678897559989478400",
+   "value": 0.9999608199059168
+  }
+ }
+}

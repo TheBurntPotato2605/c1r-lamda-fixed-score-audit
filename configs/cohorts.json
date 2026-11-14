@@ -1,0 +1,124 @@
+{
+ "description": "Cohort definitions of the audit (primary specification P-A) with row counts taken from the published G5 aggregates.",
+ "release": {
+  "dataset": "LAMDA, Baseline configuration",
+  "dataset_url": "https://huggingface.co/datasets/IQSeC-Lab/LAMDA/tree/ad9614bdd5556767f97ced2fce797c2f06408ebf",
+  "dataset_revision": "ad9614bdd5556767f97ced2fce797c2f06408ebf",
+  "code_url": "https://github.com/IQSeC-Lab/LAMDA/tree/7728bfafcd5539a286b5f8c47b6f1e3b2d1f4249",
+  "code_commit": "7728bfafcd5539a286b5f8c47b6f1e3b2d1f4249",
+  "features": 4561,
+  "total_rows": 1008381,
+  "years_released": "2013-2025 (2015 absent)"
+ },
+ "TRAIN": {
+  "definition": "all rows of 2013 and 2014 (both storage partitions) except the last observed month of each year",
+  "rows": 172328,
+  "malware": 83158
+ },
+ "IID": {
+  "definition": "last observed month of each training year (2013-12 and 2014-08), both storage partitions",
+  "units": [
+   "IID_2013",
+   "IID_2014"
+  ],
+  "months": {
+   "IID_2013": "2013-12",
+   "IID_2014": "2014-08"
+  }
+ },
+ "NEAR": {
+  "definition": "years 2016 and 2017, one unit per year (secondary; not in the primary FAR horizon)",
+  "units": [
+   "NEAR_2016",
+   "NEAR_2017"
+  ]
+ },
+ "FAR": {
+  "definition": "years 2018-2025, one unit per year (primary horizon)",
+  "units": [
+   "FAR_2018",
+   "FAR_2019",
+   "FAR_2020",
+   "FAR_2021",
+   "FAR_2022",
+   "FAR_2023",
+   "FAR_2024",
+   "FAR_2025"
+  ]
+ },
+ "membership": "Unseen arm = rows of a unit whose exact 4,561-value int8 feature vector does not occur in any TRAIN row; Full arm = all rows of the unit",
+ "units": {
+  "FAR_2018": {
+   "rows": 104292,
+   "malware": 39350,
+   "benign": 64942,
+   "unseen_rows": 102749
+  },
+  "FAR_2019": {
+   "rows": 91050,
+   "malware": 41585,
+   "benign": 49465,
+   "unseen_rows": 88098
+  },
+  "FAR_2020": {
+   "rows": 102073,
+   "malware": 46355,
+   "benign": 55718,
+   "unseen_rows": 101015
+  },
+  "FAR_2021": {
+   "rows": 81155,
+   "malware": 35627,
+   "benign": 45528,
+   "unseen_rows": 80882
+  },
+  "FAR_2022": {
+   "rows": 86416,
+   "malware": 41648,
+   "benign": 44768,
+   "unseen_rows": 85700
+  },
+  "FAR_2023": {
+   "rows": 54354,
+   "malware": 7892,
+   "benign": 46462,
+   "unseen_rows": 54200
+  },
+  "FAR_2024": {
+   "rows": 48427,
+   "malware": 794,
+   "benign": 47633,
+   "unseen_rows": 48415
+  },
+  "FAR_2025": {
+   "rows": 44663,
+   "malware": 23,
+   "benign": 44640,
+   "unseen_rows": 44649
+  },
+  "IID_2013": {
+   "rows": 9489,
+   "malware": 4729,
+   "benign": 4760,
+   "unseen_rows": 5754
+  },
+  "IID_2014": {
+   "rows": 5797,
+   "malware": 2252,
+   "benign": 3545,
+   "unseen_rows": 4219
+  },
+  "NEAR_2016": {
+   "rows": 109193,
+   "malware": 45134,
+   "benign": 64059,
+   "unseen_rows": 99417
+  },
+  "NEAR_2017": {
+   "rows": 99144,
+   "malware": 21359,
+   "benign": 77785,
+   "unseen_rows": 97889
+  }
+ }
+}

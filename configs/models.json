@@ -1,0 +1,115 @@
+{
+ "description": "Frozen model configurations as recorded in the run manifests (transcribed from the G5 annotation file RG-S.json, which is not published). Run r uses model seed r; the manifests record seed 1 only for the run-1 example copied here.",
+ "deviations_recorded_in_manifests": {
+  "lgbm": [
+   "G3-DEV-01 (feature domain {0,1,2}, values as released)"
+  ],
+  "mlp": [
+   "G3-DEV-01 (feature domain {0,1,2}, values as released)"
+  ],
+  "svm": [
+   "G3-DEV-01 (feature domain {0,1,2}, values as released)"
+  ],
+  "xgb": [
+   "G3-DEV-01 (feature domain {0,1,2}, values as released)",
+   "G4-DEV-01: XGBoost QuantileDMatrix training container (approved)"
+  ]
+ },
+ "models": {
+  "lgbm": {
+   "frozen": {
+    "ES": {
+     "first_metric_only": true,
+     "stopping_rounds": 100
+    },
+    "FROZEN": {
+     "boosting_type": "gbdt",
+     "colsample_bytree": 0.8,
+     "deterministic": true,
+     "force_row_wise": true,
+     "learning_rate": 0.02,
+     "max_bin": 255,
+     "max_depth": -1,
+     "metric": "auc",
+     "min_child_samples": 30,
+     "n_estimators": 5000,
+     "n_jobs": 8,
+     "num_leaves": 256,
+     "objective": "binary",
+     "reg_alpha": 1.5,
+     "reg_lambda": 1.5,
+     "subsample": 0.8,
+     "subsample_freq": 1,
+     "verbose": -1
+    },
+    "SPLIT": {
+     "random_state": 42,
+     "shuffle": true,
+     "test_size": 0.1
+    }
+   },
+   "overrides": {},
+   "xgboost_container": null
+  },
+  "mlp": {
+   "frozen": {
+    "ADAM": {
+     "betas": [
+      0.9,
+      0.999
+     ],
+     "eps": 1e-08,
+     "lr": 0.001,
+     "weight_decay": 0
+    },
+    "EPOCHS": 20,
+    "INFER_BATCH": 4096
+   },
+   "overrides": {},
+   "xgboost_container": null
+  },
+  "svm": {
+   "frozen": {
+    "FROZEN_CAL": {
+     "ensemble": true,
+     "method": "sigmoid",
+     "n_splits": 5,
+     "shuffle": false
+    },
+    "FROZEN_SVC": {
+     "C": 1.0,
+     "class_weight": null,
+     "dual": false,
+     "fit_intercept": true,
+     "intercept_scaling": 1,
+     "loss": "squared_hinge",
+     "max_iter": 10000,
+     "penalty": "l2",
+     "tol": 0.0001
+    }
+   },
+   "overrides": {},
+   "xgboost_container": null
+  },
+  "xgb": {
+   "frozen": {
+    "BATCH": 16384,
+    "FROZEN": {
+     "device": "cuda",
+     "eta": 0.05,
+     "eval_metric": "logloss",
+     "max_bin": 256,
+     "max_depth": 12,
+     "nthread": 8,
+     "objective": "binary:logistic",
+     "tree_method": "hist",
+     "verbosity": 1
+    },
+    "ROUNDS": 3000
+   },
+   "overrides": {},
+   "xgboost_container": "quantile"
+  }
+ },
+ "seed_rule": "model seed = run number (1..5)"
+}
