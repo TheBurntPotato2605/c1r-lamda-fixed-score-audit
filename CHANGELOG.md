@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.1.1 — reproducibility maintenance
+
+* Document the reference Windows installation and staged plotting setup; allow explicit aggregate-only verification.
+* Verify manifest hashes from downloaded source archives without requiring a Git index.
+* Run the unchanged independent rational-arithmetic check without Python site initialization.
+* Separate aggregate comparison status from strict pinned reference-artifact equality; validate actual score-file bytes and recorded seals.
+* Generate the final-manuscript cohort table with upward-rounded bounds beside the unchanged historical table.
+* Add lightweight regression tests; report skipped checks explicitly.
+
+No changes to frozen scientific code, archived results, reproduction evidence or historical artifacts.
+
 ## 2.1.0
 
 Added

@@ -314,7 +314,7 @@ def stage_sensitivity(ctx):
     os.makedirs(out)
     rc = subprocess.call([sys.executable, "-I", os.path.join(REPO, "src", "wp1_sensitivity.py"), "--out-dir", out], env=_env(ctx))
     need(rc == 0, "wp1_sensitivity.py stopped (see its gate messages)")
-    rc = subprocess.call([sys.executable, "-I", os.path.join(REPO, "src", "wp1_independent_check.py"), "--results-dir", out], env=_env(ctx))
+    rc = subprocess.call([sys.executable, "-I", "-S", os.path.join(REPO, "src", "wp1_independent_check.py"), "--results-dir", out], env=_env(ctx))
     need(rc == 0, "independent check failed")
     print("sensitivity: PASS")
     return True
@@ -360,19 +360,35 @@ def _walk(a, b, path, acc):
                 acc["max_abs"] = max(acc["max_abs"], abs(a - b))
 
 
-def stage_compare(ctx, ref_dir=None, tolerance=5e-5):
+def stage_compare(ctx, ref_dir=None, tolerance=5e-5, require_exact=False):
     ref_dir = ref_dir or os.path.join(REPO, "data", "g5_aggregates")
     rep = {"reference": os.path.relpath(ref_dir, REPO), "tolerance_abs": tolerance}
     seal_ref = jload(os.path.join(REFERENCE, "original_seals.json"))["slots"]
     seal_eq = {}
+    slot_integrity = {}
     for m in ctx.models:
         for r in ctx.runs:
-            R = jload(os.path.join(slot_dir(ctx, m, r), "job_result.json"))["scores"]
-            ref = seal_ref.get(f"{m}_r{r}", {})
-            seal_eq[f"{m}_r{r}"] = {"seal_equal": R["seal_sha256"] == ref.get("seal_sha256"),
-                                    "file_equal": R["file_sha256"] == ref.get("scores_file_sha256")}
+            slot = f"{m}_r{r}"
+            d = slot_dir(ctx, m, r)
+            job = jload(os.path.join(d, "job_result.json"))
+            R = job["scores"]
+            score_file = os.path.join(d, "scores.parquet")
+            seal_file = os.path.join(d, "scores.sha256")
+            actual_hash = sha256_file(score_file) if os.path.isfile(score_file) else None
+            actual_seal = None
+            if os.path.isfile(seal_file):
+                with open(seal_file, encoding="utf-8") as fh:
+                    actual_seal = fh.read().strip()
+            ref = seal_ref.get(slot, {})
+            slot_integrity[slot] = (job.get("state") == "SUCCEEDED"
+                and actual_hash is not None and actual_hash == R["file_sha256"]
+                and actual_seal is not None and actual_seal == R["seal_sha256"] == R.get("pass2_sha256"))
+            seal_eq[slot] = {"seal_equal": actual_seal is not None and actual_seal == ref.get("seal_sha256"),
+                             "file_equal": actual_hash is not None and actual_hash == ref.get("scores_file_sha256")}
     rep["score_seals"] = seal_eq
+    rep["score_slot_integrity"] = slot_integrity
     rep["n_seals_equal"] = sum(v["seal_equal"] for v in seal_eq.values())
+    rep["n_score_files_equal"] = sum(v["file_equal"] for v in seal_eq.values())
     files = {}
     for name in ("G5_per_run_metrics.json", "G5_model_summary.json", "G5_model_independent_counts.json", "G5_E3.json"):
         acc = {"fields": 0, "exact_diff": 0, "max_abs": 0.0, "structure": 0, "scalars": 0, "scalar_diff": 0, "worst": []}
@@ -388,10 +404,22 @@ def stage_compare(ctx, ref_dir=None, tolerance=5e-5):
         rep["tables_equal_published"] = {n: sha256_file(os.path.join(tdir, n)) == sha256_file(os.path.join(REPO, "outputs", "tables", n))
                                          for n in ("table4_cohorts.tex", "table5_primary.tex", "table6_sensitivity.tex") if os.path.isfile(os.path.join(tdir, n))}
     rep["status"] = "EXACT" if exact else ("WITHIN_TOLERANCE" if within else "DIFFERS")
+    rep["status_scope"] = "four aggregate JSON files only"
+    canonical_ref = os.path.realpath(ref_dir) == os.path.realpath(os.path.join(REPO, "data", "g5_aggregates"))
+    expected_slots = {f"{m}_r{r}" for m in MODELS for r in RUNS}
+    expected_tables = {"table4_cohorts.tex", "table5_primary.tex", "table6_sensitivity.tex"}
+    table_results = rep.get("tables_equal_published", {})
+    rep["reference_artifacts_exact"] = (canonical_ref and exact and set(seal_eq) == expected_slots
+        and set(table_results) == expected_tables and all(table_results.values())
+        and all(slot_integrity.values()) and all(v["seal_equal"] and v["file_equal"] for v in seal_eq.values()))
+    rep["reference_artifacts_exact_scope"] = "four aggregate files, 20 score files and recorded seals, three historical tables"
     jdump(os.path.join(ctx.reports, "compare.json"), rep)
-    print(f"compare: {rep['status']}; seals equal to the originals: {rep['n_seals_equal']}/{len(seal_eq)}; "
+    print(f"compare: aggregate {rep['status']}; seals equal to the originals: {rep['n_seals_equal']}/{len(seal_eq)}; "
+          f"score files equal: {rep['n_score_files_equal']}/{len(seal_eq)}; "
+          f"all reference artifacts exact: {rep['reference_artifacts_exact']}; "
           + "; ".join(f"{k.split('_', 1)[1][:-5]} maxdiff {v['max_abs']:.2e}" for k, v in files.items()))
-    return rep["status"] in ("EXACT", "WITHIN_TOLERANCE")
+    return (all(slot_integrity.values()) and rep["status"] in ("EXACT", "WITHIN_TOLERANCE")
+            and (not require_exact or rep["reference_artifacts_exact"]))
 
 
 # ----------------------------------------------------------------------------------------------- cli
@@ -402,7 +430,7 @@ def run_stage(name, ctx, a):
     return {"download": lambda: stage_download(ctx, a.dry_run, a.source_dir), "verify": lambda: stage_verify(ctx),
             "cohorts": lambda: stage_cohorts(ctx), "train": lambda: stage_train(ctx, a.model and [a.model], a.run and [a.run], a.force),
             "evaluate": lambda: stage_evaluate(ctx), "sensitivity": lambda: stage_sensitivity(ctx), "tables": lambda: stage_tables(ctx),
-            "figures": lambda: stage_figures(ctx), "compare": lambda: stage_compare(ctx, a.reference_dir, a.tolerance)}[name]()
+            "figures": lambda: stage_figures(ctx), "compare": lambda: stage_compare(ctx, a.reference_dir, a.tolerance, a.require_exact)}[name]()
 
 
 def main(argv=None):
@@ -416,6 +444,7 @@ def main(argv=None):
     ap.add_argument("--force", action="store_true", help="train: retrain slots that already SUCCEEDED")
     ap.add_argument("--reference-dir", help="compare: directory with reference aggregates (default: data/g5_aggregates)")
     ap.add_argument("--tolerance", type=float, default=5e-5, help="compare: absolute tolerance on AUC-scale values for WITHIN_TOLERANCE")
+    ap.add_argument("--require-exact", action="store_true", help="compare/all: fail unless all pinned score files, recorded seals, aggregates and historical tables match")
     a = ap.parse_args(argv)
     ctx = Ctx(a.work_dir)
     for st in (STAGES if a.stage == "all" else (a.stage,)):

@@ -4,13 +4,15 @@ Inputs (published in this repository, SHA-256 checked against data/g5_aggregates
     data/g5_aggregates/G5_per_run_metrics.json, G5_model_summary.json,
     G5_model_independent_counts.json, G5_E3.json, data/wp1_aggregates/WP1_S0_S4_RESULTS.json
 Outputs (outputs/tables/):
-    table4_cohorts.tex      model-independent structure of the cohorts (Table 4)
+    table4_cohorts.tex      historical cohort table (nearest-rounded B_u, retained for byte comparison)
+    table3_cohorts_manuscript.tex  final manuscript cohort table (B_u rounded upward)
     table5_primary.tex      primary results per model (Table 5)
     table6_sensitivity.tex  exploratory S0-S4 summary (Table 6), bounds rounded UPWARD
     bounds.json             exact count bounds B_u and the weighted bounds of Eq. (5), with upward-rounded values
 
-All arithmetic uses fractions.Fraction. Inequalities are asserted on exact values; a displayed bound is always
-rounded upward so that the printed inequality is valid. Reads no raw data, labels or scores.
+All arithmetic uses fractions.Fraction. Inequalities are asserted on exact values; publication bounds are rounded
+upward so that the printed inequality is valid. The historical cohort table retains its original display rounding.
+Reads no raw data, labels or scores.
 
 Usage: python -I src/make_tables.py [--out-dir outputs/tables]
 """
@@ -112,6 +114,15 @@ def main():
             nm, c(n), c(f_["malware"]), fd(100 * Fr(seen, n), 2), c(u_["malware"]), fd(B[u], 4),
             c(E[u]["rows_in_conflict_keys"]), E[u]["E_min"], fd(loss, 2 if loss < Fr(1, 10) else 1)))
     open(os.path.join(out, "table4_cohorts.tex"), "w", encoding="ascii", newline="\n").write("\n".join(L) + "\n")
+
+    # Final manuscript Table 3: same rows, with certified upward-rounded bounds.
+    # Preserve the historical Table 4 (nearest-rounded display) for exact comparison.
+    publication_rows = [L[0]]
+    for u, row in zip(UNITS, L[1:]):
+        cells = row.split(" & ")
+        cells[5] = up(B[u], 4)
+        publication_rows.append(" & ".join(cells))
+    open(os.path.join(out, "table3_cohorts_manuscript.tex"), "w", encoding="ascii", newline="\n").write("\n".join(publication_rows) + "\n")
 
     # ---------------------------------------------------------------- Table 5
     L = []

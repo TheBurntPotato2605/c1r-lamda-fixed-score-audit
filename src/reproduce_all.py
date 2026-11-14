@@ -47,14 +47,10 @@ def run(args, **kw):
 def main():
     skip_fig = "--skip-figures" in sys.argv
     # 1 manifest
-    bad = []
-    for ln in open(os.path.join(REPO, "MANIFEST.sha256"), encoding="utf-8"):
-        if ln.strip():
-            h, n = ln.strip().split("  ", 1)
-            p = os.path.join(REPO, n)
-            if not os.path.isfile(p) or sha(p) != h:
-                bad.append(n)
-    step("1 MANIFEST.sha256", not bad, "mismatches: %s" % bad if bad else "")
+    r = run(["pipeline/make_manifest.py", "--check"])
+    step("1 MANIFEST.sha256", r.returncode == 0, r.stdout.strip() or r.stderr[-200:])
+    if r.returncode != 0:
+        sys.exit(1)
 
     with tempfile.TemporaryDirectory() as td:
         # 2 S0-S4
@@ -62,6 +58,8 @@ def main():
         os.makedirs(out)
         r = run(["src/wp1_sensitivity.py", "--out-dir", out])
         step("2a wp1_sensitivity.py exit status (gates A-F)", r.returncode == 0, r.stdout.strip().splitlines()[-1] if r.stdout else r.stderr[-200:])
+        if r.returncode != 0:
+            sys.exit(1)
         arch = os.path.join(REPO, "data", "wp1_aggregates")
         step("2b S0-S4 CSV byte-identical to archive", sha(os.path.join(out, "WP1_S0_S4_RESULTS.csv")) == sha(os.path.join(arch, "WP1_S0_S4_RESULTS.csv")))
         a = json.load(open(os.path.join(out, "WP1_S0_S4_RESULTS.json"), encoding="utf-8"))
@@ -75,27 +73,29 @@ def main():
                 x.pop(path[-1], None)
         step("2c S0-S4 JSON identical (5 provenance labels masked)", a == b)
         # 3 independent check
-        r = run(["src/wp1_independent_check.py", "--results-dir", out])
+        r = run(["-S", "src/wp1_independent_check.py", "--results-dir", out])
         step("3 independent rational-arithmetic check", r.returncode == 0, r.stdout.strip().splitlines()[-1] if r.stdout else r.stderr[-200:])
         # 4 tables
         tdir = os.path.join(td, "tables")
         r = run(["src/make_tables.py", "--out-dir", tdir])
-        same = r.returncode == 0 and all(
-            sha(os.path.join(tdir, f)) == sha(os.path.join(REPO, "outputs", "tables", f)) for f in sorted(os.listdir(tdir)))
+        expected = {"table4_cohorts.tex", "table5_primary.tex", "table6_sensitivity.tex", "bounds.json",
+                    "table3_cohorts_manuscript.tex"}
+        same = r.returncode == 0 and set(os.listdir(tdir)) == expected and all(
+            sha(os.path.join(tdir, f)) == sha(os.path.join(REPO, "outputs", "tables", f)) for f in sorted(expected))
         step("4 tables and bounds equal outputs/tables", same)
         # 5 figures
         if not skip_fig:
             fdir = os.path.join(td, "fig")
             r = run(["src/make_figures.py", os.path.join(REPO, "data", "g5_aggregates"), fdir, os.path.join(fdir, "v.json")])
-            if r.returncode != 0 and "matplotlib" in r.stderr:
-                print("%-58s SKIPPED (matplotlib not installed)" % "5 figures")
-            else:
-                ok = r.returncode == 0
-                if ok:
-                    x = json.load(open(os.path.join(fdir, "v.json"), encoding="utf-8"))
-                    y = json.load(open(os.path.join(REPO, "outputs", "figures", "plotted_values.json"), encoding="utf-8"))
-                    ok = x == y
-                step("5 figures: plotted values equal archive", ok)
+            ok = r.returncode == 0
+            if ok:
+                x = json.load(open(os.path.join(fdir, "v.json"), encoding="utf-8"))
+                y = json.load(open(os.path.join(REPO, "outputs", "figures", "plotted_values.json"), encoding="utf-8"))
+                ok = x == y
+            step("5 figures: plotted values equal archive", ok,
+                 "" if ok else "install requirements.txt or explicitly use --skip-figures; " + r.stderr[-200:])
+        else:
+            print("5 figures: SKIPPED (--skip-figures)")
     print("RESULT:", "ALL PASS" if not FAILS else "FAILED: %s" % FAILS)
     sys.exit(1 if FAILS else 0)
 

@@ -56,43 +56,89 @@ Evidence: `evidence/` (see `evidence/README.md`).
 ## Reproducibility limitations
 
 * Bit-identity on other hardware, GPUs, drivers or operating systems has not been tested; GPU models (XGBoost, MLP) may
-  differ in the last bits. `compare` then reports `WITHIN_TOLERANCE` or `DIFFERS` instead of `EXACT`.
+  differ in the last bits. `compare` reports aggregate agreement separately from exact score-file/recorded-seal and table agreement.
+  The sensitivity stage can stop if the reproduced values fail its exact published-value gates.
 * All results are descriptive and conditional on the released LAMDA representation, whose upstream construction is not
   verified.
 
-## Installation
+## Installation and execution
 
-Python 3.13.3:
+Run commands from the repository root. For a quick reproduction using only the published aggregates, Python 3.13
+and its standard library suffice (the reference interpreter was 3.13.3). No LAMDA data or GPU is needed:
 
+```bash
+python -I src/reproduce_all.py --skip-figures
 ```
+
+To regenerate figures as well, install `requirements.txt` in an appropriate environment, then run
+`python -I src/reproduce_all.py`. Figure plotted values, not rendered PDF bytes, are compared. The figure step must
+pass unless explicitly skipped. Both workflows verify `MANIFEST.sha256` before analysis.
+
+### Real-dataset reproduction (reference platform: Windows 11)
+
+Use CPython 3.13.3 and compatible CUDA hardware. The hash-pinned fitting lock is for the original Windows/CUDA
+builds, not a portable Linux/macOS lock. The recorded reproduction installed locally available verified wheels
+(offline); the following online installation route has not been independently verified end to end.
+
+```powershell
 python -m venv .venv
-.venv/bin/pip install --require-hashes --no-deps -r environment/requirements-g4.lock \
-    --extra-index-url https://download.pytorch.org/whl/cu126
-# without hash checking: pip install -r environment/requirements-pipeline.txt
+$P = ".\.venv\Scripts\python.exe"
+& $P -m pip install --require-hashes --no-deps -r environment/requirements-g4.lock --extra-index-url https://download.pytorch.org/whl/cu126
+& $P -m pip check
 ```
 
-XGBoost and the MLP need a CUDA GPU (the reference runs used CUDA 12.6 wheels); SVM and LightGBM run on CPU. The
-aggregate-only workflow needs only the standard library (figures: `requirements.txt`).
+For offline installation with the same verified wheel files, replace the index option with
+`--no-index --find-links <wheel-directory>`. Do not silently substitute a different wheel when a hash check fails.
+The non-hash-pinned convenience list `environment/requirements-pipeline.txt` is not equivalent evidence of an exact
+fitting environment. XGBoost and the MLP require a CUDA GPU; SVM and LightGBM use CPU.
 
-## Execution
+Run the stages in order in a dedicated work directory outside the tracked source files (allow sufficient disk/RAM;
+reference hardware, resource notes and local-data alternative: [pipeline/README.md](pipeline/README.md)):
 
+```powershell
+& $P pipeline/c1r_e2e.py download --work-dir WORK
+& $P pipeline/c1r_e2e.py verify --work-dir WORK
+& $P pipeline/c1r_e2e.py cohorts --work-dir WORK
+& $P pipeline/c1r_e2e.py train --work-dir WORK
+& $P pipeline/c1r_e2e.py evaluate --work-dir WORK
+& $P pipeline/c1r_e2e.py sensitivity --work-dir WORK
+& $P pipeline/c1r_e2e.py tables --work-dir WORK
+# Keep plotting dependencies out of the fitting environment until fitting is complete.
+& $P -m pip install -r requirements.txt
+& $P pipeline/c1r_e2e.py figures --work-dir WORK
+& $P pipeline/c1r_e2e.py compare --work-dir WORK --require-exact
 ```
-# A. aggregate-only: S0-S4, tables, bounds and figures from the published aggregates (also checks MANIFEST.sha256)
-python -I src/reproduce_all.py
 
-# B. end-to-end on the real dataset (about 2 h of fitting on the reference laptop)
-python pipeline/c1r_e2e.py all --work-dir WORK
+Stop on any nonzero exit status before advancing to the next stage. The `all` shortcut requires all dependencies
+(including matplotlib) to be available; the staged route above mirrors the verified installation order. The
+reference run took about two hours of fitting. `compare.json` separates aggregate equality, actual score-file hashes,
+recorded seals and historical table equality. `--require-exact` fails unless all pinned reference artifacts match;
+without it, the aggregate status can be `EXACT` or `WITHIN_TOLERANCE` even when some reference artifacts differ.
+See the scope of the comparison in the pipeline documentation.
 
-# C. supplementary metrics on the sealed score tables of WORK (after B), then the independent verification
-python -X int_max_str_digits=0 pipeline/operating_points/operating_points.py --work-dir WORK --compare-dir data/operating_points
-python -X int_max_str_digits=0 pipeline/operating_points/verify_operating_points.py --work-dir WORK
+### Supplementary AP and low-FPR metrics
 
-# all automated checks
-python pipeline/run_checks.py
+After the real-data evaluation, run from the same environment (use a new output directory if rerunning):
+
+```powershell
+& $P -X int_max_str_digits=0 pipeline/operating_points/operating_points.py --work-dir WORK --compare-dir data/operating_points
+& $P -X int_max_str_digits=0 pipeline/operating_points/verify_operating_points.py --work-dir WORK
 ```
 
-`-X int_max_str_digits=0` is required for C: exact AP fractions reach about 18,700 decimal digits, beyond Python's default
-4,300-digit integer-string conversion limit. Stage-by-stage commands and expected outputs: `pipeline/README.md`.
+The integer-string option is necessary for exact AP fractions exceeding 4,300 decimal digits. The verification is on
+newly generated scores; published aggregate CSVs alone do not substitute for these scores. No prospective threshold
+performance is implied.
+
+### Automated checks
+
+```bash
+python pipeline/run_checks.py --no-network --skip-synthetic --with-figures
+```
+
+This command runs local source, manifest, aggregate/figure and lightweight integrity checks. Omit `--with-figures`
+if plotting dependencies are unavailable. For all checks in the pinned fitting environment, run
+`python pipeline/run_checks.py`; add `--with-figures` if plotting dependencies are installed. Network and synthetic
+checks are reported as skipped when excluded. They do not train on real data.
 
 ## Repository layout
 
@@ -107,8 +153,14 @@ evidence/   study_records/ and v2.1.0_validation/
 configs/, environment/, outputs/ (regenerated tables and figures)
 ```
 
-`MANIFEST.sha256` lists the SHA-256 of every tracked file except itself, sorted by path; regenerate with
-`python pipeline/make_manifest.py` and check with `python pipeline/make_manifest.py --check`.
+`MANIFEST.sha256` lists the SHA-256 of every tracked file except itself, sorted by path.
+`python pipeline/make_manifest.py --check` verifies listed-file hashes in a downloaded source ZIP and also verifies
+tracked-file coverage in a Git checkout. ZIP verification does not establish Git-index completeness. To regenerate in
+a Git checkout, stage all intended files first, then run `python pipeline/make_manifest.py` and stage the new manifest.
+Historical tables in `outputs/tables/` retain their original filenames and bytes. The separately generated
+`table3_cohorts_manuscript.tex` uses upward-rounded bounds as in the final manuscript; historical `table4_cohorts.tex`
+uses nearest rounding. Primary and sensitivity tables (`table5_primary.tex`, `table6_sensitivity.tex`) correspond to
+final manuscript Tables 4 and 5. The final Table 6 source is `data/operating_points/manuscript_summary.csv`.
 
 Not published: raw dataset content, per-row score tables, model checkpoints and internal records (`EXCLUSIONS.md`). The
 protocol and deviation records are available from the corresponding author on reasonable request.
