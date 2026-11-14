@@ -1,0 +1,73 @@
+{
+ "description": "Supplementary, post-hoc evaluation metrics (non-interpolated AP; maximum empirical TPR at FPR <= 1% and <= 0.1%, operating points selected in sample) on the 12 distinct original sealed score tables, and their independent numerical verification. Not prospective deployment performance.",
+ "metric_run_checks": {
+  "auc_alignment_checks": 480,
+  "count_checks": 24,
+  "sklearn_ap_max_abs_dev": 2.220446049250313e-16,
+  "sklearn_tpr_checks": 576,
+  "exact_subset": {
+   "evaluated": 144,
+   "max_abs_dev": 1.0888477360590147e-16,
+   "threshold_positive_groups": 8000
+  },
+  "exact_large_units": {
+   "lgbm": {
+    "abs_dev": 5.358544718162202e-17,
+    "arm": "F",
+    "positive_groups": 35662,
+    "seconds": 0.6,
+    "status": "EXACT_MATCH",
+    "table": "c18336bc85d3d784e7646bcf7806a8b7416e4799e24b886bb5a3c294d8ebbee9",
+    "time_limit_s": 150.0,
+    "unit": "FAR_2022"
+   },
+   "mlp": {
+    "abs_dev": 1.4377578244570332e-17,
+    "arm": "F",
+    "positive_groups": 35933,
+    "seconds": 0.7,
+    "status": "EXACT_MATCH",
+    "table": "db848e5739aef0bb988c5ab2c93b1245ea9577f203d41decb3a7effaf6cf90f5",
+    "time_limit_s": 150.0,
+    "unit": "FAR_2020"
+   },
+   "svm": {
+    "abs_dev": 4.607373181848706e-17,
+    "arm": "F",
+    "positive_groups": 35853,
+    "seconds": 0.6,
+    "status": "EXACT_MATCH",
+    "table": "836c350ebaf2fd380e23add1f4220f3db3a8c39aa31751a0af0ff1321a29e118",
+    "time_limit_s": 150.0,
+    "unit": "FAR_2022"
+   },
+   "xgb": {
+    "abs_dev": 5.970385037683708e-17,
+    "arm": "F",
+    "positive_groups": 34929,
+    "seconds": 0.5,
+    "status": "EXACT_MATCH",
+    "table": "d6ee11d9efbf4c02e9100676f9c346c522618ebe1155543dd5107a2ed23a49a9",
+    "time_limit_s": 150.0,
+    "unit": "FAR_2022"
+   }
+  }
+ },
+ "independent_verification": {
+  "distinct_tables": 12,
+  "reported_slot_arms": 480,
+  "operating_points": 960,
+  "auc_alignment_checks": 480,
+  "exact_AP_checks": 148,
+  "exact_fraction_checks": 4084,
+  "max_AP_and_aggregate_abs_error": 3.3306690738754696e-16,
+  "tolerance": 1e-12
+ },
+ "execution_note": "The first run stopped while writing outputs because exact AP fractions (up to 18730 decimal digits) exceed Python's default 4,300-digit integer-string limit; it was rerun with `-X int_max_str_digits=0` into a new output directory with unchanged code. The partial output was discarded.",
+ "verification_note": "The re-execution control scripts were verified by the lead author, not by an independent pre-execution review; the numerical verification above does not replace that review.",
+ "published_aggregates_sha256": {
+  "unit_arm_metrics.csv": "87bff35c8527f5635e2f1d969a54873efaea7e6fd151fb10b9b5557cadc72f31",
+  "results.json": "5e3e9833d3fcb3831025b5efd11924b48be14ca865925f3c81dcf3961631c138",
+  "manuscript_summary.csv": "5f6e483a85983216e143bcbb1cc2db7db49f2a5b2da80344a7cfc067f004dcf0"
+ }
+}

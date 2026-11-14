@@ -1,0 +1,111 @@
+{
+ "description": "End-to-end execution of release v2.0.0 (commit 02b4566bb6e8d5db0eec516ccce7e496fcc49d9c) on the real dataset: download, verify, cohorts, train (4 models x 5 runs), evaluate, sensitivity, tables, figures, compare.",
+ "environment": {
+  "python": "3.13.3",
+  "installation": "fresh virtual environment; offline hash-pinned installation of the 20 wheels of environment/requirements-g4.lock (public-index reachability not tested); matplotlib installed only for the figures stage",
+  "hardware": "the reference laptop of the study (Intel i5-12450H, 16 GB RAM, NVIDIA RTX 3050 Laptop GPU 4 GB)",
+  "data": "the 24 pinned LAMDA files from a locally verified copy, re-verified (size, SHA-256, footers, schema, rows)"
+ },
+ "results": {
+  "score_files_and_seals_equal": "20/20",
+  "aggregate_files_byte_identical": [
+   "G5_E3.json",
+   "G5_model_independent_counts.json",
+   "G5_model_summary.json",
+   "G5_per_run_metrics.json"
+  ],
+  "published_tables_identical": [
+   "table4_cohorts.tex",
+   "table5_primary.tex",
+   "table6_sensitivity.tex"
+  ],
+  "compare_status": "EXACT",
+  "S0_S4_independent_checks": {
+   "status": "PASS",
+   "n_checks": 8530
+  }
+ },
+ "scope": "Exact reproduction under the tested environment and installation procedure. Bit-identity on other hardware, GPUs, drivers or operating systems has not been tested.",
+ "per_slot": {
+  "lgbm_r1": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "lgbm_r2": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "lgbm_r3": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "lgbm_r4": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "lgbm_r5": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r1": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r2": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r3": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r4": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r5": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r1": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r2": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r3": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r4": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r5": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r1": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r2": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r3": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r4": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r5": {
+   "file_equal": true,
+   "seal_equal": true
+  }
+ }
+}

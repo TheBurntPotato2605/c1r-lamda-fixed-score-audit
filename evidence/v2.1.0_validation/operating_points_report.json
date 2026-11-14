@@ -1,0 +1,16 @@
+{
+ "result": "DONE",
+ "out_dir": "<validation>/operating_points",
+ "files": {
+  "results.json": "d5fd285f7f1f2c0c486c3af4cab1e711ad463cdd4fa4021d63a1139d2b2c63d0",
+  "verification.json": "ba7bb58ab1bafde9c18c0b2ba99a3861ba75b172282105f5794452edaadbd292",
+  "unit_arm_metrics.csv": "87bff35c8527f5635e2f1d969a54873efaea7e6fd151fb10b9b5557cadc72f31"
+ },
+ "distinct_score_tables": 12,
+ "auc_alignment_checks": 480,
+ "sklearn_ap_max_abs_dev": 2.220446049250313e-16,
+ "compare": {
+  "unit_arm_metrics.csv_byte_identical": true,
+  "manuscript_summary_max_abs_difference": 1.1102230246251565e-16
+ }
+}

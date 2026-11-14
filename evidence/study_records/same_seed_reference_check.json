@@ -1,0 +1,64 @@
+{
+ "description": "Same-seed check of the modified authorization check used for runs 2-5 (summary of the sealed comparison record).",
+ "design": "Four fresh seed-1 fits (one per model) under the modified check, in an isolated copy of the original runner that differed only in its output location, compared with the historical seed-1 sealed results produced under the original check. Comparison by file and seal hashes only; no score table was decoded.",
+ "scope": "Shows that these four seed-1 outputs are unchanged. It does not demonstrate general runner equivalence: the branch of the modified check that admits runs 2-5 is not exercised at seed 1. Fresh controls under the original check were not required because all four models matched.",
+ "source_record_sha256": "121cfab3dbc4bc16f86efce0d2d872faca32940bed6ae2b6cca211b11f6fd3e6",
+ "models": {
+  "lgbm": {
+   "status": "MATCH (bit-identical to the historical seed-1 sealed output)",
+   "historical_scores_file_sha256": "310277e02a7a279ae8225a89074f07ef266296460a2ded1b39ffcd973dfe1df7",
+   "historical_seal_sha256": "fa30575ba58f5596ff5ecc048bf8985255ed075e00cd5f34d4a7cf0478a29704",
+   "scores_file_identical": true,
+   "seal_identical": true,
+   "fingerprints_equal": {
+    "config": true,
+    "environment": true,
+    "hardware": true,
+    "inputs": true
+   },
+   "attempt": 1
+  },
+  "mlp": {
+   "status": "MATCH (bit-identical to the historical seed-1 sealed output)",
+   "historical_scores_file_sha256": "a95da716045fdf5b84cb936eca8b355a6d5786a01a3251f6d6f2b03f84f5fa45",
+   "historical_seal_sha256": "a80458b634eb02e21fddd00841536054d6c97a0e83c8ba41d13c1e450e62d963",
+   "scores_file_identical": true,
+   "seal_identical": true,
+   "fingerprints_equal": {
+    "config": true,
+    "environment": true,
+    "hardware": true,
+    "inputs": true
+   },
+   "attempt": 1
+  },
+  "svm": {
+   "status": "MATCH (bit-identical to the historical seed-1 sealed output)",
+   "historical_scores_file_sha256": "836c350ebaf2fd380e23add1f4220f3db3a8c39aa31751a0af0ff1321a29e118",
+   "historical_seal_sha256": "e1f2d6ec33ff77470f5eaec3ecdc9a9f12c42b0d6c8b5a0ee87996f267a77892",
+   "scores_file_identical": true,
+   "seal_identical": true,
+   "fingerprints_equal": {
+    "config": true,
+    "environment": true,
+    "hardware": true,
+    "inputs": true
+   },
+   "attempt": 1
+  },
+  "xgb": {
+   "status": "MATCH (bit-identical to the historical seed-1 sealed output)",
+   "historical_scores_file_sha256": "d6ee11d9efbf4c02e9100676f9c346c522618ebe1155543dd5107a2ed23a49a9",
+   "historical_seal_sha256": "33b8c3cd3a4d04eca43dc323ecfda5226fa8d78f302f718080d8fe8ba83a6155",
+   "scores_file_identical": true,
+   "seal_identical": true,
+   "fingerprints_equal": {
+    "config": true,
+    "environment": true,
+    "hardware": true,
+    "inputs": true
+   },
+   "attempt": 1
+  }
+ }
+}

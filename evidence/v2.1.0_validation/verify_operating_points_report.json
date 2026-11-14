@@ -1,0 +1,13 @@
+{
+ "result": "PASS",
+ "distinct_tables": 12,
+ "slots": 20,
+ "csv_rows": 480,
+ "operating_points": 960,
+ "auc_alignment_checks": 480,
+ "exact_AP_checks": 148,
+ "exact_fraction_checks": 4084,
+ "float_checks": 960,
+ "max_abs_float_difference": 3.3306690738754696e-16,
+ "tolerance": 1e-12
+}

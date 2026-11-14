@@ -21,12 +21,14 @@ def run(name, args):
 
 def main():
     ok = [run("source parity (frozen sources)", ["pipeline/verify_source_parity.py"]),
-          run("aggregate-only workflow (manifest, S0-S4, tables)", ["src/reproduce_all.py", "--skip-figures"])]
+          run("aggregate-only workflow (manifest, S0-S4, tables)", ["src/reproduce_all.py", "--skip-figures"]),
+          run("manifest check (make_manifest.py --check)", ["pipeline/make_manifest.py", "--check"])]
     if "--no-network" not in sys.argv:
         with tempfile.TemporaryDirectory() as td:
             ok.append(run("download dry run (remote metadata == pins)", ["pipeline/c1r_e2e.py", "download", "--dry-run", "--work-dir", td]))
     if "--skip-synthetic" not in sys.argv:
         ok.append(run("synthetic end-to-end", ["pipeline/tests/test_synthetic_e2e.py"]))
+        ok.append(run("operating-point metrics (synthetic)", ["-B", "pipeline/operating_points/tests/test_operating_points.py"]))
     print("ALL CHECKS PASS" if all(ok) else "SOME CHECKS FAILED")
     return 0 if all(ok) else 1
 

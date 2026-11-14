@@ -11,14 +11,11 @@ available and independent of this pipeline.
 |---|---|---|
 | 1 | Pipeline implementation complete | **Yes**: all stages implemented through the frozen code |
 | 2 | Clean-clone installation and synthetic verification passed | **Yes**: synthetic end-to-end 13/13, source parity PASS, aggregate workflow PASS (logs: release assets) |
-| 3 | Full real-dataset execution completed | **Partial.** Executed on a fresh public download: `download`, `verify`, `cohorts` (see below). **Not executed:** `train`, `evaluate`, `sensitivity`, `tables`, `figures`, `compare` on newly computed scores |
-| 4 | All manuscript results reproduced | **No**: the fit/score stages need a GPU run (about 2 h on the reference machine) that has not been performed |
+| 3 | Full real-dataset execution completed | **Yes** (release 2.0.0, all stages, 20 fits): 20/20 score files and seals bit-identical to the original sealed results, four aggregate files byte-identical, three published tables identical, S0-S4 independent check PASS (8,530 checks). Summary: `evidence/study_records/real_data_reproduction_summary.json` |
+| 4 | Scope | Exact reproduction **in the tested environment** (reference laptop, Python 3.13.3, offline hash-pinned installation of the lock, locally verified data). Other hardware, GPUs, drivers and operating systems have not been tested |
 
-Executed on real data from a fresh download of the pinned revision (`verification/real_dataset_stages_through_cohorts/`):
-the 24 files match their pinned sizes and SHA-256; the frozen G3 core reproduced the pinned membership digest
-(`f4b62175...bc8`), all 13 cohort sizes, the sealed keys/seen table (SHA-256 `cdc26789...551a`, bit-exact) and byte-identical
-aggregate tables (`G3_AGGREGATE_TABLES.csv`, conflicts, coverage, estimability). Everything downstream of the keys table
-(fitting, scoring, AUCs) is verified only on synthetic data until the real run is performed.
+Earlier real-data logs of release 2.0.0 (download, verify, cohorts on a fresh public download) remain in
+`verification/real_dataset_stages_through_cohorts/`.
 
 ## Requirements
 
@@ -62,6 +59,20 @@ Existing `SUCCEEDED` slots are kept unless `--force`. The original sealed result
 | Aggregate JSON (`eval/`) | `compare` reports `EXACT` (byte-identical to `data/g5_aggregates`), else `WITHIN_TOLERANCE` (structure equal and every AUC-scale value within `--tolerance`, default 5e-5, the half-unit of the fourth decimal in which Tables 5-6 report AUC values) with a listing of the largest deviations, else `DIFFERS` |
 | S0 | `wp1_sensitivity.py` Gate B requires exact equality of S0 with the stored per-run values and the published Table 5 cells at 4/2 decimals; a hardware-dependent shift that changes a published digit stops the stage and is reported, never hidden |
 | Tables 4-6 | `compare` lists whether each regenerated table file equals `outputs/tables/*` |
+
+## Supplementary evaluation metrics (added in 2.1.0)
+
+```
+python -X int_max_str_digits=0 pipeline/operating_points/operating_points.py --work-dir WORK [--compare-dir data/operating_points]
+python -X int_max_str_digits=0 pipeline/operating_points/verify_operating_points.py --work-dir WORK
+python -I -B pipeline/operating_points/tests/test_operating_points.py
+```
+
+Run after `train` and `evaluate`. AP (non-interpolated) and the maximum empirical TPR at FPR <= 1% and <= 0.1% per score
+table, unit and arm, with tie groups taken whole; the operating points are selected in sample. `metric_core.py` is
+byte-identical to the verified core (SHA-256 `083a1c6b...bf6`); the driver keeps the verified evaluation, aggregation and
+output functions verbatim. Exploratory: these metrics do not replace the ROC-AUC analysis, and no ROC-AUC bound applies to
+them. `-X int_max_str_digits=0` is required because exact AP fractions exceed Python's default 4,300-digit limit.
 
 ## Tests
 

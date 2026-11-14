@@ -51,3 +51,20 @@ places the legend below panel b on a canvas 0.25 in taller, keeping panel sizes,
 * `pipeline/reference/`: `dataset_files.json` (24 files: URL, size, SHA-256, rows) and `g1_inventory.json` (reduced copy of the original G1 remote-metadata inventory: size, footer length and footer SHA-256, row count, server x-linked-etag = file SHA-256) derive from the G1 inventory of 4 November 2026; `original_seals.json` holds the seal and file SHA-256 of the 20 original score tables (from the internal G5 authorization record, hash strings only).
 * `pipeline/verification/`: logs of the stages executed on real data (download, verify, cohorts), the synthetic end-to-end log.
 * `data/g3_aggregates/G3_AGGREGATE_TABLES.csv` was reproduced byte for byte by the public pipeline from a fresh download (together with the conflicts, coverage and estimability tables).
+
+## Release 2.1.0: supplementary metrics and reproduction evidence
+
+| File | Origin | SHA-256 |
+|---|---|---|
+| `data/operating_points/unit_arm_metrics.csv` | unmodified bytes of the archived supplementary-metric output (480 rows: model, run, unit, arm; aggregate metrics only) | `87bff35c8527f5635e2f1d969a54873efaea7e6fd151fb10b9b5557cadc72f31` |
+| `data/operating_points/results.json` | unmodified bytes of the archived output (exact fractions; contains the archived analysis-record label) | `5e3e9833d3fcb3831025b5efd11924b48be14ca865925f3c81dcf3961631c138` |
+| `data/operating_points/manuscript_summary.csv` | unmodified bytes of the independent verifier's summary (source of the manuscript table) | `5f6e483a85983216e143bcbb1cc2db7db49f2a5b2da80344a7cfc067f004dcf0` |
+| `pipeline/operating_points/metric_core.py` | byte-identical copy of the verified metric core (its docstring keeps the archived record label) | `083a1c6b27b2f9ca2df9db922af569ef5ee7275765d43eb2e9a7c00b51e87bf6` |
+| `pipeline/operating_points/operating_points.py` | driver: the verified evaluation, aggregation and output functions are AST-identical to the study driver apart from output file names and the exception name; the private authorization layer is replaced by the public work-directory context | see `MANIFEST.sha256` |
+| `pipeline/operating_points/verify_operating_points.py` | adapted from the study's independent verifier (same numerical checks; private record checks removed); never imports the core or the driver | see `MANIFEST.sha256` |
+| `pipeline/operating_points/tests/test_operating_points.py` | the study's synthetic tests of the core and driver (13 tests), import paths adapted | see `MANIFEST.sha256` |
+| `evidence/study_records/*` | summaries derived from sealed records of the study; `real_data_reproduction_compare_report.json` is the unmodified `compare` report of the v2.0.0 reproduction | see `MANIFEST.sha256` |
+| `evidence/v2.1.0_validation/*` | produced for v2.1.0: the v2.1.0 code run read-only on the reproduction's score tables (local paths replaced by a placeholder) | see `MANIFEST.sha256` |
+
+The validation run regenerated `unit_arm_metrics.csv` byte for byte; the independent verifier regenerated
+`manuscript_summary.csv` byte for byte.

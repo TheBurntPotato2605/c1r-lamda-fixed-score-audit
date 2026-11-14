@@ -1,67 +1,123 @@
 # c1r-lamda-fixed-score-audit
 
-End-to-end pipeline, aggregate data and verification code for the study
+Code, aggregate results and verification evidence for the paper
 
 > **Exact Feature-Vector Overlap and Measured Temporal Degradation: A Fixed-Score Audit of the LAMDA Android Malware Benchmark**
+> A. S. Tran, K. Le Tran Anh, T. Q. Nguyen, D. Pham Le, V. H. Ho (FPT University). Manuscript prepared for ICCIES 2027.
 
+## Purpose
 
-The study asks how much the IID-to-FAR ROC-AUC degradation of four baseline detectors on the LAMDA benchmark changes when
-evaluation is restricted to rows whose exact feature vector never occurs in the training cohort. Both populations are masks over
-the same sealed scores. All results are descriptive and conditional on the released feature representation.
+Temporal evaluations of Android malware detectors control *when* test samples were collected, not whether their feature
+vectors are new. The study measures how much the IID-to-FAR ROC-AUC degradation of four baseline detectors on the LAMDA
+benchmark changes when evaluation is restricted to rows whose **exact feature vector never occurs in the training cohort**.
 
-The repository offers two independent workflows:
-
-| Workflow | What it does | Needs |
-|---|---|---|
-| **A. End-to-end pipeline** (`pipeline/`) | downloads the pinned LAMDA release, rebuilds cohorts and exact-vector membership, trains the 4 models x 5 runs, scores, evaluates, derives S0-S4, tables and figures, and compares with the original sealed results | the pinned dataset (232 MB), pinned environment, CUDA GPU for XGBoost/MLP, about 2 h of fitting |
-| **B. Aggregate-only** (`src/reproduce_all.py`) | re-derives S0-S4, tables, bounds and figures from the published aggregate results | Python only |
-
-## Verification status 
-
-| # | Status | State |
-|---|---|---|
-| 1 | Pipeline implementation complete | **Yes** (frozen C1-R scientific code, see `pipeline/PARITY.md`) |
-| 2 | Clean-clone installation and synthetic verification | **Yes**: source parity PASS, aggregate workflow PASS, synthetic end-to-end 13/13 (release assets hold the clean-clone logs) |
-| 3 | Full real-dataset execution | **Partial**: on a fresh public download, `download`, `verify` and `cohorts` were executed and reproduced the pinned membership digest, all cohort sizes, the sealed keys/seen table (bit-exact SHA-256) and the aggregate tables byte for byte. `train` and all later stages have **not** been run on real data |
-| 4 | All manuscript results reproduced | **No.** Not before the real fitting run is performed and compared (`pipeline/c1r_e2e.py compare`) |
-
-
-
-## Quick start
-
-```
-# B. aggregate-only (standard library; matplotlib only for figures)
-python -I src/reproduce_all.py
-
-# A. end-to-end (pinned environment: environment/requirements-pipeline.txt, Python 3.13.3)
-python pipeline/c1r_e2e.py download --work-dir WORK            # or: all
-python pipeline/c1r_e2e.py cohorts  --work-dir WORK
-python pipeline/c1r_e2e.py train    --work-dir WORK            # GPU, ~2 h
-python pipeline/c1r_e2e.py evaluate --work-dir WORK
-python pipeline/c1r_e2e.py compare  --work-dir WORK
-python pipeline/run_checks.py                                  # all automated checks
-```
-
-## What is where
-
-```
-pipeline/       end-to-end entry point c1r_e2e.py, frozen scientific sources (hash-pinned), reference pins, tests,
-                PARITY.md (relation to the original implementation), verification logs
-src/            aggregate-only scripts: S0-S4, independent check, tables/bounds, figures, reproduce_all.py
-data/           published aggregate results (G5, G3, WP1) and score-file digests: used by workflow B and by `compare`
-configs/        cohort definitions and frozen model settings
-environment/    exact package pins (hash-pinned original lock, freeze of the original environment)
-outputs/        tables, bounds and figures regenerated from the published aggregates
-PROVENANCE.md, EXCLUSIONS.md, LICENSE_STATUS.md, CITATION.cff, MANIFEST.sha256
-```
-
-## Dataset and third-party material
+## Dataset
 
 LAMDA (IQSeC Lab), Baseline configuration, revision `ad9614bdd5556767f97ced2fce797c2f06408ebf`
-(<https://huggingface.co/datasets/IQSeC-Lab/LAMDA/tree/ad9614bdd5556767f97ced2fce797c2f06408ebf>); the LAMDA authors' code is at
-commit `7728bfafcd5539a286b5f8c47b6f1e3b2d1f4249` (<https://github.com/IQSeC-Lab/LAMDA/tree/7728bfafcd5539a286b5f8c47b6f1e3b2d1f4249>).
-The pipeline downloads the 24 data files from the public Hugging Face revision and checks each size and SHA-256 against
-`pipeline/reference/dataset_files.json`; nothing of the dataset or of the LAMDA code is stored here. The generic dataset DOI
-`10.57967/hf/5563` identifies the dataset, not this revision.
+(<https://huggingface.co/datasets/IQSeC-Lab/LAMDA/tree/ad9614bdd5556767f97ced2fce797c2f06408ebf>): 1,008,381 applications,
+2013-2025 (2015 absent), 4,561 Drebin-style static features (released int8 vectors), labels from VirusTotal detection
+counts. The pipeline downloads the 24 data files of that revision and verifies each size and SHA-256 against
+`pipeline/reference/dataset_files.json`, then footers, schema and row counts. No dataset content is stored in this
+repository. The DOI `10.57967/hf/5563` identifies the dataset, not this revision.
 
+## Methodology
 
+* **Cohorts.** TRAIN: 2013-2014 except the last month of each year; IID: December 2013 and August 2014 (held out within the
+  training era, so the primary comparison is not a strictly forward-time test); NEAR: 2016-2017; FAR: 2018-2025, one unit
+  per year.
+* **Models.** Linear SVM (sigmoid calibration), LightGBM, XGBoost and an MLP with frozen, untuned settings
+  (`configs/models.json`); five runs each (run *r* uses seed *r*); 20 score files, 12 distinct score tables.
+* **Full/Unseen evaluation at fixed scores.** Both populations are masks over the same sealed score tables: Full is every row
+  of a unit; Unseen drops rows whose exact released vector occurs in TRAIN ("seen" means exact-vector membership in the
+  TRAIN cohort, not that a model was fitted on or memorized the row).
+* **Experimental protocol.** The primary estimand Δdeg = D(U) − D(F), with D the equal-weight mean IID AUC minus mean FAR
+  AUC, was fixed in an internally hash-locked protocol before training (not externally registered). ROC-AUC values are exact
+  rationals.
+* **Analytic additions.** An exact pair identity with a class-count bound on the FAR component, and the per-unit
+  label-conflict AUC ceiling (an upper bound for every scoring function of the released vector in each unit; no single
+  scoring function need attain all per-unit ceilings at once).
+* **Post-hoc analyses.** S1-S4 re-weightings of the stored unit AUCs, and supplementary evaluation metrics: non-interpolated
+  average precision and the maximum empirical TPR at FPR ≤ 1% and ≤ 0.1%. These operating points are selected in sample;
+  they do not estimate prospective deployment performance, and no ROC-AUC bound applies to them.
+* **Experimental history.** Runs 2-5 were executed under a modified authorization check that was accepted only after the
+  runs; the targeted review required before evaluation has no reviewer sign-off on record. A same-seed check found the four
+  seed-1 outputs unchanged under the modified check (this is not a general runner-equivalence result). Details: manuscript,
+  Sect. 4.
+
+## Reproduction results
+
+| Evidence level | What was shown |
+|---|---|
+| **v2.0.0, real-dataset end-to-end reproduction** (all stages, 20 fits) | 20/20 score files and seals identical to the original sealed results; the four aggregate result files byte-identical; the three published tables identical; S0-S4 independent check PASS (8,530 checks). Exact reproduction **in the tested environment** (reference laptop, Python 3.13.3, offline hash-pinned installation of the lock, locally verified data) |
+| **v2.1.0, supplementary metrics** | the metric code of `pipeline/operating_points/` run on the score tables and aggregates produced by the v2.0.0 reproduction: `unit_arm_metrics.csv` regenerated byte for byte; independent numerical verification PASS (480 result rows, 960 operating points, 148 exact AP fractions; maximum floating-point difference 3.3e-16). No new training run was performed for v2.1.0 |
+
+Evidence: `evidence/` (see `evidence/README.md`).
+
+## Reproducibility limitations
+
+* Bit-identity on other hardware, GPUs, drivers or operating systems has not been tested; GPU models (XGBoost, MLP) may
+  differ in the last bits. `compare` then reports `WITHIN_TOLERANCE` or `DIFFERS` instead of `EXACT`.
+* All results are descriptive and conditional on the released LAMDA representation, whose upstream construction is not
+  verified.
+
+## Installation
+
+Python 3.13.3:
+
+```
+python -m venv .venv
+.venv/bin/pip install --require-hashes --no-deps -r environment/requirements-g4.lock \
+    --extra-index-url https://download.pytorch.org/whl/cu126
+# without hash checking: pip install -r environment/requirements-pipeline.txt
+```
+
+XGBoost and the MLP need a CUDA GPU (the reference runs used CUDA 12.6 wheels); SVM and LightGBM run on CPU. The
+aggregate-only workflow needs only the standard library (figures: `requirements.txt`).
+
+## Execution
+
+```
+# A. aggregate-only: S0-S4, tables, bounds and figures from the published aggregates (also checks MANIFEST.sha256)
+python -I src/reproduce_all.py
+
+# B. end-to-end on the real dataset (about 2 h of fitting on the reference laptop)
+python pipeline/c1r_e2e.py all --work-dir WORK
+
+# C. supplementary metrics on the sealed score tables of WORK (after B), then the independent verification
+python -X int_max_str_digits=0 pipeline/operating_points/operating_points.py --work-dir WORK --compare-dir data/operating_points
+python -X int_max_str_digits=0 pipeline/operating_points/verify_operating_points.py --work-dir WORK
+
+# all automated checks
+python pipeline/run_checks.py
+```
+
+`-X int_max_str_digits=0` is required for C: exact AP fractions reach about 18,700 decimal digits, beyond Python's default
+4,300-digit integer-string conversion limit. Stage-by-stage commands and expected outputs: `pipeline/README.md`.
+
+## Repository layout
+
+```
+pipeline/   c1r_e2e.py (end-to-end entry point), frozen/ (hash-pinned study sources), public/ (wrappers),
+            operating_points/ (supplementary metrics: verified core, driver, independent verifier, tests),
+            reference/ (dataset and seal pins), tests/, verification/, make_manifest.py
+src/        aggregate-only scripts (S0-S4, independent check, tables, figures, reproduce_all.py)
+data/       aggregate results: g5_aggregates (primary), wp1_aggregates (S0-S4), g3_aggregates (cohorts),
+            operating_points (supplementary metrics), provenance (score-file digests)
+evidence/   study_records/ and v2.1.0_validation/
+configs/, environment/, outputs/ (regenerated tables and figures)
+```
+
+`MANIFEST.sha256` lists the SHA-256 of every tracked file except itself, sorted by path; regenerate with
+`python pipeline/make_manifest.py` and check with `python pipeline/make_manifest.py --check`.
+
+Not published: raw dataset content, per-row score tables, model checkpoints and internal records (`EXCLUSIONS.md`). The
+protocol and deviation records are available from the corresponding author on reasonable request.
+
+## Citation
+
+See `CITATION.cff`.
+
+## License
+
+No license has been granted for this repository; all rights are reserved by the authors (`LICENSE_STATUS.md`). The LAMDA
+dataset and code are third-party material under their owners' terms and are not redistributed here.

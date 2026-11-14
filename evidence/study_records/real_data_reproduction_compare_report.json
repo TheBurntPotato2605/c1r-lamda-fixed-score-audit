@@ -1,0 +1,135 @@
+{
+ "aggregates": {
+  "G5_E3.json": {
+   "byte_identical": true,
+   "exact_diff": 0,
+   "fields": 52,
+   "max_abs": 0.0,
+   "scalar_diff": 0,
+   "scalars": 176,
+   "structure": 0,
+   "worst": []
+  },
+  "G5_model_independent_counts.json": {
+   "byte_identical": true,
+   "exact_diff": 0,
+   "fields": 36,
+   "max_abs": 0.0,
+   "scalar_diff": 0,
+   "scalars": 192,
+   "structure": 0,
+   "worst": []
+  },
+  "G5_model_summary.json": {
+   "byte_identical": true,
+   "exact_diff": 0,
+   "fields": 288,
+   "max_abs": 0.0,
+   "scalar_diff": 0,
+   "scalars": 4,
+   "structure": 0,
+   "worst": []
+  },
+  "G5_per_run_metrics.json": {
+   "byte_identical": true,
+   "exact_diff": 0,
+   "fields": 900,
+   "max_abs": 0.0,
+   "scalar_diff": 0,
+   "scalars": 2920,
+   "structure": 0,
+   "worst": []
+  }
+ },
+ "n_seals_equal": 20,
+ "reference": "data\\g5_aggregates",
+ "score_seals": {
+  "lgbm_r1": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "lgbm_r2": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "lgbm_r3": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "lgbm_r4": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "lgbm_r5": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r1": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r2": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r3": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r4": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "mlp_r5": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r1": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r2": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r3": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r4": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "svm_r5": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r1": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r2": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r3": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r4": {
+   "file_equal": true,
+   "seal_equal": true
+  },
+  "xgb_r5": {
+   "file_equal": true,
+   "seal_equal": true
+  }
+ },
+ "status": "EXACT",
+ "tables_equal_published": {
+  "table4_cohorts.tex": true,
+  "table5_primary.tex": true,
+  "table6_sensitivity.tex": true
+ },
+ "tolerance_abs": 5e-05
+}
